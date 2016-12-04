@@ -1,0 +1,130 @@
+//==========  Desktop First Method  ==========
+
+// Large Devices, Wide Screens 
+@media only screen and (max-width : 1200px) {
+
+}
+
+// Medium Devices, Desktops 
+@media only screen and (max-width : 992px) {
+	
+	.left-span-half {
+		display: block;
+		float: left;
+		margin-left: 0;
+		margin-right: -100%;
+		width: 48.0%
+	}
+
+	.head-row {
+		.arm {
+			left: 416px;
+		}
+
+		.sleeve {
+			left: 892px;
+		}
+	}
+
+} // @media only screen and (max-width : 992px) 
+
+
+
+// Small Devices, Tablets 
+@media only screen and (max-width : 768px) {
+	
+	.left-span-half {
+		display: block;
+		float: left;
+		margin-left: 0;
+		margin-right: -100%;
+		width: 100%
+	}
+
+	.page-studio .logo {
+		top: 45px;
+		width: 250px;
+	}
+
+	.head-row {
+		min-height: 250px;
+
+		.arm {
+			left: 295px;
+			top: 20px;
+			height: 230px;
+		}
+	}
+
+	header nav {
+		text-align: center;
+
+		a {
+			font-size: 1.1em;
+		}
+	}
+
+} // @media only screen and (max-width : 768px) 
+
+
+
+// Extra Small Devices, Phones 
+@media only screen and (max-width : 480px) {
+	
+	.page-studio .logo {
+		top: 10px;
+	}
+
+	.head-row {
+		min-height: 200px;
+
+		i.arm, i.sleeve {
+			display: none;
+		}
+	}
+
+	header nav {
+		li {
+			display: block;
+		}
+
+		a {
+			font-size: 1.3em;
+		}
+	}
+
+} // @media only screen and (max-width : 480px) 
+
+
+// Custom, iPhone Retina 
+@media only screen and (max-width : 320px) {
+
+}
+
+
+//==========  Mobile First Method  ==========
+
+// Custom, iPhone Retina 
+@media only screen and (min-width : 320px) {
+
+}
+
+// Extra Small Devices, Phones 
+@media only screen and (min-width : 480px) {
+
+}
+
+// Small Devices, Tablets 
+@media only screen and (min-width : 768px) {
+
+}
+
+// Medium Devices, Desktops 
+@media only screen and (min-width : 992px) {
+
+}
+
+// Large Devices, Wide Screens 
+@media only screen and (min-width : 1200px) {
+
+}

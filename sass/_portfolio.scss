@@ -1,0 +1,309 @@
+/* ======================================================================= */
+/* PORTFOLIO STYLES
+/* ======================================================================= */
+.cd-image-container {
+  top: $filterHeight;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  widht: 100%;
+  height: $sliderHeight;
+  position: absolute;
+  overflow: hidden;
+  //background-color: $logoGreen;
+}
+
+.cd-image-container img {
+  display: block;
+  width: 100%;
+}
+
+.cd-image-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cd-image-description {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  max-width: 70%;
+  padding: 0;
+  margin: 0;
+  color: white;
+  padding: 1em;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cd-image-description:hover {
+  border-radius: 0 0 0 3px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cd-resize-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.cd-resize-img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  width: auto;
+  max-width: none;
+}
+
+.cd-resize-img .cd-image-label {
+  right: auto;
+  left: 0;
+}
+
+.is-visible .cd-resize-img {
+  width: 50%;
+  animation: cd-bounce-in 0.7s;
+  //animation-delay: 0.5s;
+}
+
+@-webkit-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@-moz-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.cd-handle {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  left: 50%;
+  top: 50%;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-radius: 50%;
+  background: url("../img/handle.png") no-repeat center center;
+  background: url("../img/handle.svg") no-repeat center center;
+}
+
+.cd-prev {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  left: 0;
+  top: 50%;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-radius: 50%;
+  background: url("../img/slider.png") no-repeat center center;
+  background: url("../img/slider.svg") no-repeat center center;
+}
+
+.cd-next {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  right: 0;
+  top: 50%;
+  margin-right: -22px;
+  margin-top: -22px;
+  border-radius: 50%;
+  background: url("../img/slider.png") no-repeat center center;
+  background: url("../img/slider.svg") no-repeat center center;
+}
+
+.cd-handle,
+.cd-prev,
+.cd-next {
+  opacity: 0;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translate3d(0, 0, 0) scale(0);
+}
+
+
+// Анимация текстовых надписей
+.cd-image-description,
+.cd-image-label  {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.is-visible .cd-image-description,
+.is-visible .cd-image-label  {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+}
+
+
+// Анимация стрелок слайдера
+.cd-handle:hover,
+.cd-prev:hover,
+.cd-next:hover {
+  background-color: transparent;//$hoverGreen;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.is-visible .cd-handle,
+.is-visible .cd-prev,
+.is-visible .cd-next {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: transform 0.3s 0.7s, opacity 0s 0.7s;
+}
+
+.cd-image-container span.is-hidden {
+  visibility: hidden;
+}
+
+
+////////////////////////////////////////////////////////
+// фильтр работ
+.portfolio-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $filterHeight;
+  z-index: 30;
+  padding: 0;
+  margin: 0;
+  
+  ul {
+    position: absolute;
+    list-stile: none;
+    margin: 0;
+    padding: 0;
+    //background-color: white;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid $logoGreen;
+  }
+
+  li {
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+  }
+
+  li.is-active {
+    border-bottom: 4px solid $logoYellow;
+  }
+
+  a {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: $logoGreen;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    transition: all 250ms;
+    padding: 0 .5em;
+    cursor: pointer;
+  }
+
+  li:hover a,
+  li.is-active a {
+    color: $activeGreen;
+  }
+
+}
+
+
+////////////////////////////////////////////////////////
+// до-после слайдер
+//
+.portfolio-slider {
+  //border-top: 5px solid $logoGreen;
+  //box-sizing: border-box;
+
+}
+
+
+////////////////////////////////////////////////////////
+// миниатюры работ
+//
+.portfolio-thumb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: $thumbHeight;
+  width: 100%;
+
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    //width: 100%;
+    
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    
+    list-style: none inside;
+    white-space: nowrap;
+    
+    border-top: 4px solid white;
+  }
+
+  li {
+    display: inline;
+  }
+
+  img { 
+    //max-width: 19%;
+    height: 95%;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  li.is-active img {
+    border-top: 3px solid $logoGreen;
+  }
+
+}

@@ -1,0 +1,176 @@
+/* Подключение шрифтов для сайта
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@include font-face ("Raleway", "../fonts/Raleway/RalewayLight", 300);
+@include font-face ("Raleway", "../fonts/Raleway/RalewayRegular", 400);
+
+
+
+/* Разные общие стили
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: normal 16px/1.7 "Raleway", sans-serif;
+}
+
+body {
+  font-size: 1em;
+  font-weight: normal;
+  color: $textColor;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+a, button {
+  outline: none !important;
+  color: $linkColor;
+  transition: all .3s;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: .9em 0;
+  margin: 0;
+}
+
+
+li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+
+.hidden {
+  display: none; 
+}
+
+
+/* rootstudio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 990px;
+  width: 90%;
+}
+
+
+.wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+.left-span-half {
+  display: block;
+  float: left;
+  margin-left: 0;
+  margin-right: -100%;
+  width: 48.5%;
+  min-width: 270px;
+}
+
+
+/* Заголовок страницы
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.head-row {
+  min-height: 306px;
+  padding-top: 30px;
+
+  h1 {
+    margin: 0;
+    padding-top: 1.8em;  
+  }
+}
+
+
+header {
+
+  nav {
+    ul {
+      padding: .9em 0;
+    }
+
+    a {
+      font-size: 1.3em;
+      text-decoration: none;
+    }
+
+    a:hover,
+    li.active a {
+      color: $textColor;
+    }
+  }
+
+  .head-row .bg-img {
+    display: block;
+    position: absolute;
+    background-size: contain;
+    //background-color: lightgray;
+  }
+
+}
+
+
+/* Стили страницы "О студии"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.page-studio {
+  
+  header {
+    background-color: $lightGray;
+
+    nav {
+      background-color: $logoGreen;
+    }
+  }
+
+  // на главной вместо заголовка показываем логотип
+  .head-row h1 {
+    display: none;
+  }
+
+  .logo {
+    left: 0;
+    top: 65px;
+    height: 200px;
+    width: 320px;
+    background: url("../img/logo.svg") left center no-repeat;
+  }
+
+  .arm {
+    background: url("../img/arm/studio-header-arm.png") left center no-repeat;
+    height: 250px;
+    width: 577px;
+    //right: -50px;
+    left: 516px;
+    top: 20px;
+    z-index: 2;
+  }
+
+  .sleeve {
+    background: url("../img/arm/studio-header-sleeve.png") left center repeat-x;  
+    height: 64px;
+    width: 200%;
+    left: 992px;
+    //right: -50px;
+    top: 181px;
+  }
+
+}

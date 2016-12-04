@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/* ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╤И╤А╨╕╤Д╤В╨╛╨▓ ╨┤╨╗╤П ╤Б╨░╨╣╤В╨░
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@font-face {
+  font-family: "Raleway";
+  font-weight: 300;
+  src: url("../fonts/Raleway/RalewayLight.eot?") format("eot"), url("../fonts/Raleway/RalewayLight.woff2") format("woff2"), url("../fonts/Raleway/RalewayLight.woff") format("woff"), url("../fonts/Raleway/RalewayLight.ttf") format("truetype"), url("../fonts/Raleway/RalewayLight.svg#Raleway") format("svg"); }
+@font-face {
+  font-family: "Raleway";
+  font-weight: 400;
+  src: url("../fonts/Raleway/RalewayRegular.eot?") format("eot"), url("../fonts/Raleway/RalewayRegular.woff2") format("woff2"), url("../fonts/Raleway/RalewayRegular.woff") format("woff"), url("../fonts/Raleway/RalewayRegular.ttf") format("truetype"), url("../fonts/Raleway/RalewayRegular.svg#Raleway") format("svg"); }
+/* ╨а╨░╨╖╨╜╤Л╨╡ ╨╛╨▒╤Й╨╕╨╡ ╤Б╤В╨╕╨╗╨╕
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: normal 16px/1.7 "Raleway", sans-serif; }
+
+body {
+  font-size: 1em;
+  font-weight: normal;
+  color: #426e85;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden; }
+
+h1 {
+  font-size: 2.2em; }
+
+a, button {
+  outline: none !important;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all .3s;
+          transition: all .3s; }
+
+ul {
+  list-style-type: none;
+  padding: .9em 0;
+  margin: 0; }
+
+li {
+  display: inline-block;
+  margin-right: 1em; }
+
+.hidden {
+  display: none; }
+
+/* rootstudio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 990px;
+  width: 90%; }
+
+.wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.left-span-half {
+  display: block;
+  float: left;
+  margin-left: 0;
+  margin-right: -100%;
+  width: 48.5%;
+  min-width: 270px; }
+
+/* ╨Ч╨░╨│╨╛╨╗╨╛╨▓╨╛╨║ ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.head-row {
+  min-height: 306px;
+  padding-top: 30px; }
+  .head-row h1 {
+    margin: 0;
+    padding-top: 1.8em; }
+
+header nav ul {
+  padding: .9em 0; }
+header nav a {
+  font-size: 1.3em;
+  text-decoration: none; }
+header nav a:hover,
+header nav li.active a {
+  color: #426e85; }
+header .head-row .bg-img {
+  display: block;
+  position: absolute;
+  background-size: contain; }
+
+/* ╨б╤В╨╕╨╗╨╕ ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л "╨Ю ╤Б╤В╤Г╨┤╨╕╨╕"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.page-studio header {
+  background-color: whitesmoke; }
+  .page-studio header nav {
+    background-color: #8cbeb3; }
+.page-studio .head-row h1 {
+  display: none; }
+.page-studio .logo {
+  left: 0;
+  top: 65px;
+  height: 200px;
+  width: 320px;
+  background: url("../img/logo.svg") left center no-repeat; }
+.page-studio .arm {
+  background: url("../img/arm/studio-header-arm.png") left center no-repeat;
+  height: 250px;
+  width: 577px;
+  left: 516px;
+  top: 20px;
+  z-index: 2; }
+.page-studio .sleeve {
+  background: url("../img/arm/studio-header-sleeve.png") left center repeat-x;
+  height: 64px;
+  width: 200%;
+  left: 992px;
+  top: 181px; }
+
+@media only screen and (max-width: 992px) {
+  .left-span-half {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 48%; }
+
+  .head-row .arm {
+    left: 416px; }
+  .head-row .sleeve {
+    left: 892px; } }
+@media only screen and (max-width: 768px) {
+  .left-span-half {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 100%; }
+
+  .page-studio .logo {
+    top: 45px;
+    width: 250px; }
+
+  .head-row {
+    min-height: 250px; }
+    .head-row .arm {
+      left: 295px;
+      top: 20px;
+      height: 230px; }
+
+  header nav {
+    text-align: center; }
+    header nav a {
+      font-size: 1.1em; } }
+@media only screen and (max-width: 480px) {
+  .page-studio .logo {
+    top: 10px; }
+
+  .head-row {
+    min-height: 200px; }
+    .head-row i.arm, .head-row i.sleeve {
+      display: none; }
+
+  header nav li {
+    display: block; }
+  header nav a {
+    font-size: 1.3em; } }
+
+/*# sourceMappingURL=styles.css.map */
