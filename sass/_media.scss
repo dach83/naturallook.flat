@@ -71,8 +71,11 @@
 // Extra Small Devices, Phones 
 @media only screen and (max-width : 480px) {
 	
-	.page-studio .logo {
-		top: 10px;
+  .page-studio .logo {
+		top: 30px;
+		width: 100%;
+		height: 160px;
+		background-position: center center;
 	}
 
 	.head-row {
