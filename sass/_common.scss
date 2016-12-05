@@ -64,7 +64,7 @@ body {
 
 footer, section {
   margin: 0;
-  padding: 1.2em 0;
+  padding: 0;
 }
 
 
@@ -144,9 +144,10 @@ li {
 // выравнивает содержимое по центру 
 .center-text-wrapper {
     display: block;
-    margin-left: 20%;
-    width: 60%;
+    margin-left: 25%;
+    width: 50%;
     text-align: center;
+    padding: 2em 0;
 }
 
 
@@ -159,6 +160,23 @@ li {
 }
 
 
+.bg-img {
+  display: block;
+  position: absolute;
+  background-size: contain !important;
+}  
+
+.logo {
+  z-index: 3;
+}
+
+.arm {
+  z-index: 2;
+}
+
+.sleeve {
+  z-index: 1;
+}
 
 // СТИЛИ ЗАГОЛОВКА
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -183,14 +201,7 @@ li {
     padding: 0;
   }
 
-  i.logo, i.arm, i.sleeve {
-    display: block;
-    position: absolute;
-    background-size: contain;
-  }  
-
 } // .head-row
-
 
 
 // верхнее меню навигации
@@ -263,49 +274,47 @@ footer {
 
   // на главной не показываем заголовок h1 
   // вместо заголовка показываем логотип
-  .head-row h1 {
-    display: none;
+  .head-row {
+    h1 {
+      display: none;
+    }
+
+    // логотип студии - показываем только на главной
+    .logo {
+      @extend .bg-img;
+      background: url("../img/logo.svg") left center no-repeat;
+      left: 0;
+
+      height: 100%;
+      width: 330px;
+    }
+
+    // рука на широких экранах
+    // приживатся правым краем к правому краю wrappera
+    // и при ресайзе движется вместе с ним
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/studio-header-arm.png") right center no-repeat;
+      right: 0;
+
+      height: 100%;
+      width: 500px;
+    }
+
+    // рукав на широких экранах 
+    // прижимается левым краем к правому краю wrappera
+    // и получается как бы продолжением руки.
+    // Размеры и верхний отступ надо подбирать.
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/studio-header-sleeve.png") left center repeat-x;  
+      left: 100%;
+      top: 248px;
+      
+      height: 67px;
+      width: 500%;
+    }
   }
-
-  // логотип студии - показываем только на главной
-  .logo {
-    background: url("../img/logo.svg") left center no-repeat;
-    left: 0;
-
-    height: 100%;
-    width: 330px;
-
-    z-index: 3; // логотип должен быть выше остальных слоев
-  }
-
-  // рука на широких экранах
-  // приживатся правым краем к правому краю wrappera
-  // и при ресайзе движется вместе с ним
-  .arm {
-    background: url("../img/arm/studio-header-arm.png") right center no-repeat;
-    right: 0;
-
-    height: 100%;
-    width: 500px;
-
-    z-index: 2;
-  }
-
-  // рукав на широких экранах 
-  // прижимается левым краем к правому краю wrappera
-  // и получается как бы продолжением руки.
-  // Размеры и верхний отступ надо подбирать.
-  .sleeve {
-    background: url("../img/arm/studio-header-sleeve.png") left center repeat-x;  
-    left: 100%;
-    top: 248px;
-    
-    height: 67px;
-    width: 500%;
-    
-    z-index: 1;
-  }
-
 
   // СОДЕРЖАНИЕ ГЛАВНОЙ
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -313,12 +322,56 @@ footer {
     color: rgba($darkGreen, .8);
   }
 
+  // раздел "Чем мы занимаемся?"
   .services {
     background-color: $lightGreen;
+
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/studio-services-arm.png") left center no-repeat;
+      left: 0;
+      top: 0;
+
+      width: 20%;
+      height: 100%;
+    }
+
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
+      top: 0;
+      left: 0;
+
+      width: 20%;
+      height: 40%;
+    }
+
   }
 
+
+  // раздел "Сколько это стоит?"
   .prices {
-    background-color: $lightYellow;
+    background-color: $logoYellow;//$lightYellow;
+
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/studio-prices-arm.png") right center no-repeat;
+      top: 0;
+      right: 0;
+
+      width: 20%;
+      height: 100%;
+    }
+
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/studio-prices-sleeve.png") right top repeat-y;
+      top: 60%;
+      right: 0;
+
+      width: 20%;
+      height: 40%;
+    }
   }
 
 
@@ -351,13 +404,15 @@ footer {
 @media only screen and (max-width : 944px) {
   
   .page-studio {
+    
+    .head-row {
+      .arm {
+        left: 350px; // не налазим на логотип
+      }
 
-    .arm {
-      left: 350px; // не налазим на логотип
-    }
-
-    .sleeve {
-      left: 850px; // равно arm left + width
+      .sleeve {
+        left: 850px; // равно arm left + width
+      }
     }
 
   } // .page-studio
@@ -374,10 +429,10 @@ footer {
     .head-text {
       max-width: 100%;
     }
+  }
 
-    i.arm, i.sleeve {
-      display: none;
-    }
+  i.arm, i.sleeve {
+    display: none !important; 
   }
 
 
