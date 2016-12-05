@@ -8,26 +8,6 @@
 // Medium Devices, Desktops 
 @media only screen and (max-width : 992px) {
 	
-	.left-span-half {
-		display: block;
-		float: left;
-		margin-left: 0;
-		margin-right: -100%;
-		width: 48.0%
-	}
-
-	/*
-	.head-row {
-		.arm {
-			left: 416px;
-		}
-
-		.sleeve {
-			left: 892px;
-		}
-	}
-	*/
-	
 } // @media only screen and (max-width : 992px) 
 
 
@@ -35,40 +15,6 @@
 // Small Devices, Tablets 
 @media only screen and (max-width : 768px) {
 	
-	.left-span-half {
-		display: block;
-		float: left;
-		margin-left: 0;
-		margin-right: -100%;
-		width: 100%
-	}
-
-	.page-studio .logo {
-		top: 45px;
-		width: 250px;
-	}
-
-
-	/*
-	.head-row {
-		min-height: 250px;
-
-		.arm {
-			left: 295px;
-			top: 20px;
-			height: 230px;
-		}
-	}
-	*/
-
-	header nav {
-		text-align: center;
-
-		a {
-			font-size: 1.1em;
-		}
-	}
-
 } // @media only screen and (max-width : 768px) 
 
 
@@ -76,33 +22,6 @@
 // Extra Small Devices, Phones 
 @media only screen and (max-width : 480px) {
 	
-  .page-studio .logo {
-		top: 30px;
-		width: 100%;
-		height: 160px;
-		background-position: center center;
-	}
-
-	/*
-	.head-row {
-		min-height: 200px;
-
-		i.arm, i.sleeve {
-			display: none;
-		}
-	}
-	*/
-
-	header nav {
-		li {
-			display: block;
-		}
-
-		a {
-			font-size: 1.3em;
-		}
-	}
-
 } // @media only screen and (max-width : 480px) 
 
 
