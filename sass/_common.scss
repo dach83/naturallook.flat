@@ -118,6 +118,16 @@ li {
   display: none; 
 }
 
+.desktop {
+  disply: block;
+}
+
+.tablet {
+  display: none;
+}
+
+
+
 // основной контейнер 
 // задает ширину для всех страниц
 .wrapper {
@@ -142,7 +152,7 @@ li {
 // выравнивает содержимое по центру 
 .center-text-wrapper {
     display: block;
-    margin: 0 21%;
+    margin: 0 auto;
     width: 58%;
     text-align: center;
     padding: 2rem 0 2rem;
@@ -151,7 +161,7 @@ li {
 
 // выравнивает содержимое по вертикали 
 // по центру радительского элемента
-.vcenter {
+.head-vcenter {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);  
@@ -160,18 +170,27 @@ li {
 
 .btn {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   background-color: $logoGreen;
   text-decoration: none;
-  padding: .6rem 1.5rem;
+  padding: .6rem;
   width: 90%;
   max-width: 380px;
   border-radius: 5px;
-  margin: 2.5rem 0 1.5rem;
+  margin: 2rem 0 2rem;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, .8);
 
   &:hover {
     color: $whiteText;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, .5);
+    //margin-top: 5px;
+  }
+
+  &:active {
+    color: $whiteText;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, .8);    
+    transition: all 100ms;
   }
 }
 
@@ -284,10 +303,10 @@ footer {
   .cofe.sleeve {
     @extend .bg-img;
     background: url("../img/arm/cofe-sleeve.png") left bottom repeat-x;
-    bottom: 142px;
+    bottom: 143px;
     left: 110%;
     
-    height: 163px;
+    height: 162px;
     width: 500%;
   }
 
@@ -299,6 +318,7 @@ footer {
     
     height: 100%;
     width: 20%;
+    max-width: 170px;
   }
 
 } // footer
@@ -344,7 +364,7 @@ footer {
     .arm {
       @extend .bg-img;
       background: url("../img/arm/lamp-arm.png") right center no-repeat;
-      right: 0;
+      right: -5%;
 
       height: 100%;
       width: 500px;
@@ -357,8 +377,8 @@ footer {
     .sleeve {
       @extend .bg-img;
       background: url("../img/arm/lamp-sleeve.png") left center repeat-x;  
-      left: 100%;
-      top: 238px;
+      left: 105%;
+      top: 237px;
       
       height: 68px;
       width: 500%;
@@ -377,12 +397,14 @@ footer {
 
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/studio-services-arm.png") left center no-repeat;
+      background: url("../img/arm/studio-services-arm.png") left top no-repeat;
       left: -2%;
-      top: 0;
+      top: 5%;
 
-      width: 20%;
       height: 100%;
+      width: 20%;
+      max-width: 150px;
+      
     }
 
     .sleeve {
@@ -391,8 +413,9 @@ footer {
       top: 0;
       left: -2%;
 
+      height: 5%;
       width: 20%;
-      height: 40%;
+      max-width: 150px;
     }
 
   }
@@ -412,22 +435,24 @@ footer {
 
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/studio-prices-arm.png") right center no-repeat;
-      top: 0;
+      background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
+      bottom: 5%;
       right: -2%;
 
-      width: 20%;
       height: 100%;
+      width: 20%;
+      max-width: 150px;
     }
 
     .sleeve {
       @extend .bg-img;
-      background: url("../img/arm/studio-prices-sleeve.png") right top repeat-y;
-      top: 60%;
+      background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
+      bottom: 0;
       right: -2%;
 
+      height: 6%;
       width: 20%;
-      height: 40%;
+      max-width: 150px; 
     }
 
     .btn {
@@ -468,9 +493,13 @@ footer {
   
 
 // Фиксирую левый край руки при уменьшении ширины ГЛАВНОЙ страницы
-// Устройства среднего размера
-@media only screen and (max-width : 944px) {
+// Устройства среднего размера 944
+@media only screen and (max-width : 900px ) {
   
+  html {
+    font-size: 14px;
+  }
+
   .page-studio {
     
     .head-row {
@@ -489,6 +518,18 @@ footer {
 
 // На совсем маленьких устройствах 
 @media only screen and (max-width : 655px) {
+
+  html {
+    font-size: 12px;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .tablet {
+    display: block;
+  }
 
   // прячем картинки руки и рукава в заголовке
   .head-row {
@@ -518,7 +559,7 @@ footer {
     }
 
     li {
-      display: block;
+      //display: block;
     }
 
   }
