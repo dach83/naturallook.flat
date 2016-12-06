@@ -49,6 +49,8 @@ html, body {
   padding: 0;
   border: 0;
   font: normal 16px/1.7 "Raleway", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -57,16 +59,13 @@ body {
   color: $blueText;
   min-width: 320px;
   position: relative;
-  overflow-x: hidden;
   background-color: $lightGray;
 }
-
 
 footer, section {
   margin: 0;
   padding: 0;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -85,7 +84,6 @@ p {
   font-size: 1.3rem;
   font-weight: 500;
 }
-
 
 a, button {
   outline: none !important;
@@ -144,10 +142,10 @@ li {
 // выравнивает содержимое по центру 
 .center-text-wrapper {
     display: block;
-    margin-left: 25%;
-    width: 50%;
+    margin: 0 21%;
+    width: 58%;
     text-align: center;
-    padding: 2em 0;
+    padding: 2rem 0 2rem;
 }
 
 
@@ -157,6 +155,24 @@ li {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);  
+}
+
+
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: $logoGreen;
+  text-decoration: none;
+  padding: .6rem 1.5rem;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 5px;
+  margin: 2.5rem 0 1.5rem;
+
+  &:hover {
+    color: $whiteText;
+  }
 }
 
 
@@ -228,6 +244,7 @@ li {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 footer {
+  overflow: hidden;
 
   a {
     text-decoration: none;
@@ -250,6 +267,38 @@ footer {
       color: $whiteText;
     }
 
+  }
+
+  // руки с чашкой кофе
+  .cofe.arm {
+    @extend .bg-img;
+    background: url("../img/arm/cofe-arm.png") right bottom no-repeat;
+    bottom: 25%;
+    right: -10%;
+
+    height: 100%;
+    width: 30%;
+  }
+
+  // рукава для рук с кофе
+  .cofe.sleeve {
+    @extend .bg-img;
+    background: url("../img/arm/cofe-sleeve.png") left bottom repeat-x;
+    bottom: 142px;
+    left: 110%;
+    
+    height: 163px;
+    width: 500%;
+  }
+
+  .cake.arm {
+    @extend .bg-img;
+    background: url("../img/arm/cake-arm.png") left bottom no-repeat;
+    bottom: -10%;
+    left: 0;
+    
+    height: 100%;
+    width: 20%;
   }
 
 } // footer
@@ -290,11 +339,11 @@ footer {
     }
 
     // рука на широких экранах
-    // приживатся правым краем к правому краю wrappera
+    // прижимается правым краем к правому краю wrappera
     // и при ресайзе движется вместе с ним
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/studio-header-arm.png") right center no-repeat;
+      background: url("../img/arm/lamp-arm.png") right center no-repeat;
       right: 0;
 
       height: 100%;
@@ -307,11 +356,11 @@ footer {
     // Размеры и верхний отступ надо подбирать.
     .sleeve {
       @extend .bg-img;
-      background: url("../img/arm/studio-header-sleeve.png") left center repeat-x;  
+      background: url("../img/arm/lamp-sleeve.png") left center repeat-x;  
       left: 100%;
-      top: 248px;
+      top: 238px;
       
-      height: 67px;
+      height: 68px;
       width: 500%;
     }
   }
@@ -329,7 +378,7 @@ footer {
     .arm {
       @extend .bg-img;
       background: url("../img/arm/studio-services-arm.png") left center no-repeat;
-      left: 0;
+      left: -2%;
       top: 0;
 
       width: 20%;
@@ -340,7 +389,7 @@ footer {
       @extend .bg-img;
       background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
       top: 0;
-      left: 0;
+      left: -2%;
 
       width: 20%;
       height: 40%;
@@ -349,15 +398,23 @@ footer {
   }
 
 
+  // раздел "Наши работы"
+  .portfolio {
+    .btn {
+      background-color: $btnBlue;
+    }
+  }
+
+
   // раздел "Сколько это стоит?"
   .prices {
-    background-color: $logoYellow;//$lightYellow;
+    background-color: $lightYellow;
 
     .arm {
       @extend .bg-img;
       background: url("../img/arm/studio-prices-arm.png") right center no-repeat;
       top: 0;
-      right: 0;
+      right: -2%;
 
       width: 20%;
       height: 100%;
@@ -367,13 +424,24 @@ footer {
       @extend .bg-img;
       background: url("../img/arm/studio-prices-sleeve.png") right top repeat-y;
       top: 60%;
-      right: 0;
+      right: -2%;
 
       width: 20%;
       height: 40%;
     }
+
+    .btn {
+      background-color: $btnGreen;
+    }
+
   }
 
+  .promo {
+    .btn {
+      background-color: $btnPink;
+    }
+  }
+  
 
   // ФУТЕР ГЛАВНОЙ 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
