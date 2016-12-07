@@ -69,10 +69,9 @@ p {
   font-weight: 500; }
 
 a, button {
-  outline: none !important;
+  outline: 0 !important;
   color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: all .3s;
-          transition: all .3s; }
+  transition: all .3s; }
 
 a:hover,
 a:active {
@@ -113,16 +112,14 @@ li {
 .center-text-wrapper {
   display: block;
   margin: 0 auto;
-  width: 58%;
+  width: 60%;
   text-align: center;
   padding: 2rem 0 2rem; }
 
-.head-vcenter {
+.vcenter {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  transform: translateY(-50%); }
 
 .btn {
   display: inline-block;
@@ -142,8 +139,7 @@ li {
   .btn:active {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-    -webkit-transition: all 100ms;
-            transition: all 100ms; }
+    transition: all 100ms; }
 
 .bg-img, footer .cofe.arm, footer .cofe.sleeve, footer .cake.arm, .page-studio .head-row .logo, .page-studio .head-row .arm, .page-studio .head-row .sleeve, .page-studio .services .arm, .page-studio .services .sleeve, .page-studio .prices .arm, .page-studio .prices .sleeve {
   display: block;
@@ -166,9 +162,7 @@ li {
     top: 50%;
     left: 0;
     max-width: 330px;
-    -webkit-transform: translate(0, -50%);
-        -ms-transform: translate(0, -50%);
-            transform: translate(0, -50%); }
+    transform: translate(0, -50%); }
   .head-row h1 {
     color: white;
     margin: 0;
@@ -347,7 +341,10 @@ footer {
   left: 50%;
   margin-top: -30px;
   margin-left: -30px;
-  background: url(../img/magicwall/loading.gif) center center no-repeat rgba(200, 200, 200, 0.05);
+  background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -397,7 +394,10 @@ footer {
   left: 50%;
   margin-top: -20px;
   margin-left: -20px;
-  background: url("../img/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
+  background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -407,59 +407,29 @@ footer {
 .tablet .magicwall .magicwall-grid {
   background-color: transparent; }
 
-.magicwall .vcenter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle; }
-
-.magicwall .vcenter:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.magicwall .vcenter > * {
-  display: inline-block;
-  vertical-align: middle; }
-
 .magicwall li .hover-content {
   position: absolute;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   opacity: 0;
   text-align: center;
   color: #fff;
   background: #9dc8be;
-  -webkit-transition: opacity 150ms ease-out;
-          transition: opacity 150ms ease-out; }
-
-.magicwall li .hover-content p {
-  margin: 0; }
-
-.magicwall li .hover-content button {
-  margin: 10px 0;
-  padding: 0.5em 1em;
-  outline: none;
-  cursor: pointer;
-  color: #fff;
-  border: none;
-  background: #258282;
-  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  -webkit-transition: all 250ms ease-out;
-          transition: all 250ms ease-out;
-  opacity: 1; }
-
-.magicwall li .hover-content button:hover {
-  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5); }
-.magicwall li .hover-content button:active {
-  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-  -webkit-transition: all .1s;
-          transition: all .1s; }
+  transition: opacity 150ms ease-out; }
 
 .magicwall li:hover .hover-content {
   opacity: 1; }
+
+.magicwall li .hover-content .btn {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.3rem 0;
+  background: #258282; }
 
 /*# sourceMappingURL=styles.css.map */

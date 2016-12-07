@@ -86,7 +86,7 @@ p {
 }
 
 a, button {
-  outline: none !important;
+  outline: 0 !important;
   color: $whiteText;
   transition: all .3s;
 }
@@ -153,7 +153,7 @@ li {
 .center-text-wrapper {
     display: block;
     margin: 0 auto;
-    width: 58%;
+    width: 60%;
     text-align: center;
     padding: 2rem 0 2rem;
 }
@@ -161,7 +161,7 @@ li {
 
 // выравнивает содержимое по вертикали 
 // по центру радительского элемента
-.head-vcenter {
+.vcenter {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);  
