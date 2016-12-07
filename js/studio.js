@@ -21,7 +21,7 @@ $(function(){
 	$(".desktop .magicwall").magicWall({
 		columnsCount: '5',
 		rowsCount: '5',
-		paused: 'true',
+		//paused: 'true',
 		//loadingMode: 'chain',
 		//preloadBeforeSwitch: 'true',
 		fixedClass: 'fixed'
@@ -30,7 +30,7 @@ $(function(){
 	$(".tablet .magicwall").magicWall({
 		columnsCount: '3',
 		rowsCount: '3',
-		paused: 'true',
+		//paused: 'true',
 		//loadingMode: 'chain',
 		//preloadBeforeSwitch: 'true',
 		fixedClass: 'fixed'

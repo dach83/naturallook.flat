@@ -1,0 +1,144 @@
+// СТИЛИ ГЛАВНОЙ СТРАНИЦЫ
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+.page-studio {
+
+  // заголовки главной
+  h2 {
+    color: rgba($darkGreen, .8);
+  }
+
+  // на главной страницы цвет заголовка и меню отличаются
+  header {
+    background-color: $lightGray;
+  }
+
+  nav, footer {
+    background-color: $logoGreen;
+  }
+
+  // СТРОКА ЗАГОЛОВКА
+  // на главной не показываем заголовок h1 
+  // вместо заголовка показываем логотип
+  .head-row {
+    h1 {
+      display: none;
+    }
+
+    // логотип студии - показываем только на главной
+    .logo {
+      @extend .bg-img;
+      background: url("../img/logo.svg") left center no-repeat;
+      left: 0;
+
+      height: 100%;
+      width: 330px;
+    }
+
+    // рука на широких экранах
+    // прижимается правым краем к правому краю wrappera
+    // и при ресайзе движется вместе с ним
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/lamp-arm.png") right center no-repeat;
+      right: -5%;
+
+      height: 100%;
+      width: 500px;
+    }
+
+    // рукав на широких экранах 
+    // прижимается левым краем к правому краю wrappera
+    // и получается как бы продолжением руки.
+    // Размеры и верхний отступ надо подбирать.
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/lamp-sleeve.png") left center repeat-x;  
+      left: 105%;
+      top: 237px;
+      
+      height: 68px;
+      width: 500%;
+    }
+  }
+
+
+  // ЧЕМ МЫ ЗАНИМАЕМСЯ?
+  .services {
+    background-color: $lightGreen;
+
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/studio-services-arm.png") left top no-repeat;
+      left: -2%;
+      top: 5%;
+
+      height: 100%;
+      width: 20%;
+      max-width: 150px;
+      
+    }
+
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
+      top: 0;
+      left: -2%;
+
+      height: 5%;
+      width: 20%;
+      max-width: 150px;
+    }
+
+  }
+
+
+  // НАШИ РАБОТЫ 
+  .portfolio {
+    .btn {
+      background-color: $btnBlue;
+    }
+  }
+
+
+  // СКОЛЬКО ЭТО СТОИТ?
+  .prices {
+    background-color: $lightYellow;
+
+    .arm {
+      @extend .bg-img;
+      background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
+      bottom: 5%;
+      right: -2%;
+
+      height: 100%;
+      width: 20%;
+      max-width: 150px;
+    }
+
+    .sleeve {
+      @extend .bg-img;
+      background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
+      bottom: 0;
+      right: -2%;
+
+      height: 6%;
+      width: 20%;
+      max-width: 150px; 
+    }
+
+    .btn {
+      background-color: $btnGreen;
+    }
+
+  }
+
+
+  // ХОТИТЕ ДЕШЕВЛЕ?
+  .promo {
+    .btn {
+      background-color: $btnPink;
+    }
+  }
+  
+}

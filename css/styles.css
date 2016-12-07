@@ -71,7 +71,8 @@ p {
 a, button {
   outline: 0 !important;
   color: rgba(255, 255, 255, 0.7);
-  transition: all .3s; }
+  -webkit-transition: all .3s;
+          transition: all .3s; }
 
 a:hover,
 a:active {
@@ -94,6 +95,12 @@ li {
 
 .tablet {
   display: none; }
+
+.light-text {
+  color: rgba(255, 255, 255, 0.7); }
+
+.dark-text {
+  color: rgba(66, 88, 100, 0.7); }
 
 .wrapper {
   position: relative;
@@ -119,7 +126,9 @@ li {
 .vcenter {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .btn {
   display: inline-block;
@@ -139,7 +148,8 @@ li {
   .btn:active {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-    transition: all 100ms; }
+    -webkit-transition: all 100ms;
+            transition: all 100ms; }
 
 .bg-img, footer .cofe.arm, footer .cofe.sleeve, footer .cake.arm, .page-studio .head-row .logo, .page-studio .head-row .arm, .page-studio .head-row .sleeve, .page-studio .services .arm, .page-studio .services .sleeve, .page-studio .prices .arm, .page-studio .prices .sleeve {
   display: block;
@@ -162,7 +172,9 @@ li {
     top: 50%;
     left: 0;
     max-width: 330px;
-    transform: translate(0, -50%); }
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
   .head-row h1 {
     color: white;
     margin: 0;
@@ -181,7 +193,10 @@ footer {
   overflow: hidden; }
   footer a {
     text-decoration: none; }
+  footer h2 {
+    color: white; }
   footer .adress {
+    color: rgba(255, 255, 255, 0.7);
     padding-top: 0.5em;
     margin: 0; }
   footer .social {
@@ -211,110 +226,6 @@ footer {
     width: 20%;
     max-width: 170px; }
 
-.page-studio header {
-  background-color: whitesmoke; }
-  .page-studio header nav {
-    background-color: #8cbeb3; }
-.page-studio .head-row h1 {
-  display: none; }
-.page-studio .head-row .logo {
-  background: url("../img/logo.svg") left center no-repeat;
-  left: 0;
-  height: 100%;
-  width: 330px; }
-.page-studio .head-row .arm {
-  background: url("../img/arm/lamp-arm.png") right center no-repeat;
-  right: -5%;
-  height: 100%;
-  width: 500px; }
-.page-studio .head-row .sleeve {
-  background: url("../img/arm/lamp-sleeve.png") left center repeat-x;
-  left: 105%;
-  top: 237px;
-  height: 68px;
-  width: 500%; }
-.page-studio h2 {
-  color: rgba(37, 130, 130, 0.8); }
-.page-studio .services {
-  background-color: #e1eeeb; }
-  .page-studio .services .arm {
-    background: url("../img/arm/studio-services-arm.png") left top no-repeat;
-    left: -2%;
-    top: 5%;
-    height: 100%;
-    width: 20%;
-    max-width: 150px; }
-  .page-studio .services .sleeve {
-    background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
-    top: 0;
-    left: -2%;
-    height: 5%;
-    width: 20%;
-    max-width: 150px; }
-.page-studio .portfolio .btn {
-  background-color: #7ab1d6; }
-.page-studio .prices {
-  background-color: rgba(252, 226, 194, 0.8); }
-  .page-studio .prices .arm {
-    background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
-    bottom: 5%;
-    right: -2%;
-    height: 100%;
-    width: 20%;
-    max-width: 150px; }
-  .page-studio .prices .sleeve {
-    background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
-    bottom: 0;
-    right: -2%;
-    height: 6%;
-    width: 20%;
-    max-width: 150px; }
-  .page-studio .prices .btn {
-    background-color: #258282; }
-.page-studio .promo .btn {
-  background-color: #e27584; }
-.page-studio footer {
-  background-color: #8cbeb3; }
-  .page-studio footer h2 {
-    color: white; }
-  .page-studio footer .adress {
-    color: rgba(255, 255, 255, 0.7); }
-
-@media only screen and (max-width: 900px) {
-  html {
-    font-size: 14px; }
-
-  .page-studio .head-row .arm {
-    left: 350px; }
-  .page-studio .head-row .sleeve {
-    left: 850px; } }
-@media only screen and (max-width: 655px) {
-  html {
-    font-size: 12px; }
-
-  .desktop {
-    display: none; }
-
-  .tablet {
-    display: block; }
-
-  .head-row {
-    min-height: 200px; }
-    .head-row .head-text {
-      max-width: 100%; }
-
-  i.arm, i.sleeve {
-    display: none !important; }
-
-  .page-studio .logo {
-    max-width: 250px; }
-
-  .head-nav ul {
-    text-align: center; }
-
-  .center-text-wrapper {
-    margin-left: 5%;
-    width: 90%; } }
 /* ======================================================================= */
 /* MAGICWALL STYLES
 /* ======================================================================= */
@@ -342,9 +253,6 @@ footer {
   margin-top: -30px;
   margin-left: -30px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -395,9 +303,6 @@ footer {
   margin-top: -20px;
   margin-left: -20px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -416,7 +321,8 @@ footer {
   text-align: center;
   color: #fff;
   background: #9dc8be;
-  transition: opacity 150ms ease-out; }
+  -webkit-transition: opacity 150ms ease-out;
+          transition: opacity 150ms ease-out; }
 
 .magicwall li:hover .hover-content {
   opacity: 1; }
@@ -426,10 +332,114 @@ footer {
   top: 50%;
   left: 10%;
   width: 80%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-size: 1rem;
   margin: 0;
   padding: 0.3rem 0;
   background: #258282; }
+
+.page-studio h2 {
+  color: rgba(37, 130, 130, 0.8); }
+.page-studio header {
+  background-color: whitesmoke; }
+.page-studio nav, .page-studio footer {
+  background-color: #8cbeb3; }
+.page-studio .head-row h1 {
+  display: none; }
+.page-studio .head-row .logo {
+  background: url("../img/logo.svg") left center no-repeat;
+  left: 0;
+  height: 100%;
+  width: 330px; }
+.page-studio .head-row .arm {
+  background: url("../img/arm/lamp-arm.png") right center no-repeat;
+  right: -5%;
+  height: 100%;
+  width: 500px; }
+.page-studio .head-row .sleeve {
+  background: url("../img/arm/lamp-sleeve.png") left center repeat-x;
+  left: 105%;
+  top: 237px;
+  height: 68px;
+  width: 500%; }
+.page-studio .services {
+  background-color: #e1eeeb; }
+  .page-studio .services .arm {
+    background: url("../img/arm/studio-services-arm.png") left top no-repeat;
+    left: -2%;
+    top: 5%;
+    height: 100%;
+    width: 20%;
+    max-width: 150px; }
+  .page-studio .services .sleeve {
+    background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
+    top: 0;
+    left: -2%;
+    height: 5%;
+    width: 20%;
+    max-width: 150px; }
+.page-studio .portfolio .btn {
+  background-color: #7ab1d6; }
+.page-studio .prices {
+  background-color: rgba(252, 226, 194, 0.8); }
+  .page-studio .prices .arm {
+    background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
+    bottom: 5%;
+    right: -2%;
+    height: 100%;
+    width: 20%;
+    max-width: 150px; }
+  .page-studio .prices .sleeve {
+    background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
+    bottom: 0;
+    right: -2%;
+    height: 6%;
+    width: 20%;
+    max-width: 150px; }
+  .page-studio .prices .btn {
+    background-color: #258282; }
+.page-studio .promo .btn {
+  background-color: #e27584; }
+
+.page-portfolio header, .page-portfolio footer {
+  background-color: #e27584; }
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 14px; }
+
+  .page-studio .head-row .arm {
+    left: 350px; }
+  .page-studio .head-row .sleeve {
+    left: 850px; } }
+@media only screen and (max-width: 655px) {
+  html {
+    font-size: 12px; }
+
+  .desktop {
+    display: none; }
+
+  .tablet {
+    display: block; }
+
+  .head-row {
+    min-height: 200px; }
+    .head-row .head-text {
+      max-width: 100%; }
+
+  i.arm, i.sleeve {
+    display: none !important; }
+
+  .page-studio .logo {
+    max-width: 250px; }
+
+  .head-nav ul {
+    text-align: center; }
+
+  .center-text-wrapper {
+    margin-left: 5%;
+    width: 90%; } }
 
 /*# sourceMappingURL=styles.css.map */

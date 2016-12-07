@@ -79,7 +79,6 @@ h2 {
  font-size: 1.9rem; 
 }
 
-
 p {
   font-size: 1.3rem;
   font-weight: 500;
@@ -126,7 +125,13 @@ li {
   display: none;
 }
 
+.light-text {
+  color: $whiteText;
+}
 
+.dark-text {
+  color: $blueText;
+}
 
 // основной контейнер 
 // задает ширину для всех страниц
@@ -213,6 +218,7 @@ li {
   z-index: 1;
 }
 
+
 // СТИЛИ ЗАГОЛОВКА
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
@@ -269,7 +275,12 @@ footer {
     text-decoration: none;
   }
 
+  h2 {
+    color: white;
+  }
+
   .adress {
+    color: $whiteText;
     padding-top: 0.5em;
     margin: 0;
   }
@@ -324,251 +335,9 @@ footer {
 } // footer
 
 
-// СТИЛИ ГЛАВНОЙ СТРАНИЦЫ
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-.page-studio {
-  
-  // ЗАГОЛОВОК ГЛАВНОЙ 
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-  // на главной страницы цвет заголовка и меню отличаются
-  header {
-    background-color: $lightGray;
-
-    nav {
-      background-color: $logoGreen;
-    }
-  }
-
-  // на главной не показываем заголовок h1 
-  // вместо заголовка показываем логотип
-  .head-row {
-    h1 {
-      display: none;
-    }
-
-    // логотип студии - показываем только на главной
-    .logo {
-      @extend .bg-img;
-      background: url("../img/logo.svg") left center no-repeat;
-      left: 0;
-
-      height: 100%;
-      width: 330px;
-    }
-
-    // рука на широких экранах
-    // прижимается правым краем к правому краю wrappera
-    // и при ресайзе движется вместе с ним
-    .arm {
-      @extend .bg-img;
-      background: url("../img/arm/lamp-arm.png") right center no-repeat;
-      right: -5%;
-
-      height: 100%;
-      width: 500px;
-    }
-
-    // рукав на широких экранах 
-    // прижимается левым краем к правому краю wrappera
-    // и получается как бы продолжением руки.
-    // Размеры и верхний отступ надо подбирать.
-    .sleeve {
-      @extend .bg-img;
-      background: url("../img/arm/lamp-sleeve.png") left center repeat-x;  
-      left: 105%;
-      top: 237px;
-      
-      height: 68px;
-      width: 500%;
-    }
-  }
-
-  // СОДЕРЖАНИЕ ГЛАВНОЙ
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  h2 {
-    color: rgba($darkGreen, .8);
-  }
-
-  // раздел "Чем мы занимаемся?"
-  .services {
-    background-color: $lightGreen;
-
-    .arm {
-      @extend .bg-img;
-      background: url("../img/arm/studio-services-arm.png") left top no-repeat;
-      left: -2%;
-      top: 5%;
-
-      height: 100%;
-      width: 20%;
-      max-width: 150px;
-      
-    }
-
-    .sleeve {
-      @extend .bg-img;
-      background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
-      top: 0;
-      left: -2%;
-
-      height: 5%;
-      width: 20%;
-      max-width: 150px;
-    }
-
-  }
-
-
-  // раздел "Наши работы"
-  .portfolio {
-    .btn {
-      background-color: $btnBlue;
-    }
-  }
-
-
-  // раздел "Сколько это стоит?"
-  .prices {
-    background-color: $lightYellow;
-
-    .arm {
-      @extend .bg-img;
-      background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
-      bottom: 5%;
-      right: -2%;
-
-      height: 100%;
-      width: 20%;
-      max-width: 150px;
-    }
-
-    .sleeve {
-      @extend .bg-img;
-      background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
-      bottom: 0;
-      right: -2%;
-
-      height: 6%;
-      width: 20%;
-      max-width: 150px; 
-    }
-
-    .btn {
-      background-color: $btnGreen;
-    }
-
-  }
-
-  .promo {
-    .btn {
-      background-color: $btnPink;
-    }
-  }
-  
-
-  // ФУТЕР ГЛАВНОЙ 
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  
-  footer {
-    background-color: $logoGreen;
-    
-    h2 {
-      color: white;
-    }
-
-    .adress {
-      color: $whiteText;
-    }
-
-  }
-
-}
 
 
 
-// МЕДИА ЗАПРОСЫ
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  
-
-// Фиксирую левый край руки при уменьшении ширины ГЛАВНОЙ страницы
-// Устройства среднего размера 944
-@media only screen and (max-width : 900px ) {
-  
-  html {
-    font-size: 14px;
-  }
-
-  .page-studio {
-    
-    .head-row {
-      .arm {
-        left: 350px; // не налазим на логотип
-      }
-
-      .sleeve {
-        left: 850px; // равно arm left + width
-      }
-    }
-
-  } // .page-studio
-
-}
-
-// На совсем маленьких устройствах 
-@media only screen and (max-width : 655px) {
-
-  html {
-    font-size: 12px;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  .tablet {
-    display: block;
-  }
-
-  // прячем картинки руки и рукава в заголовке
-  .head-row {
-    min-height: 200px;
-
-    .head-text {
-      max-width: 100%;
-    }
-  }
-
-  i.arm, i.sleeve {
-    display: none !important; 
-  }
 
 
-  // уменьшаю логотип 
-  .page-studio .logo {
-    max-width: 250px;
-  }
 
-  
-  // на маленьких устройствах
-  // выводим меню столбиком и по центру?
-  .head-nav {
-    ul {
-      text-align: center;
-    }
-
-    li {
-      //display: block;
-    }
-
-  }
-
-
-  // делаем текст на ширину основного контейнера
-  .center-text-wrapper {
-    margin-left: 5%;
-    width: 90%;
-  }
-
-} // для маленьких устройств
