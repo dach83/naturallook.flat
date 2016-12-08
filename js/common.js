@@ -5,7 +5,7 @@ $(function(){
 
 	// временно отключаю стандартный обработчик 
 	$(".btn").click (function (){
-		return false;
+		//return false;
 	});
 
 

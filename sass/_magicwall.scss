@@ -71,7 +71,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5); 
 }
 
 .magicwall .magicwall-grid > li.magicwall-loading > .magicwall-wrap:before {
@@ -95,7 +94,7 @@
 // на больших экранах делаем фон зеленым
 // т.к. есть зеленые плитки
 .magicwall .magicwall-grid {
-  background-color: $logoGreen;
+  background-color: transparent;
 }
 
 // на планшетах делаем фон прозрачным, 
