@@ -25,8 +25,9 @@ $(function(){
 		//paused: 'true',
 		//loadingMode: 'chain',
 		//preloadBeforeSwitch: 'true',
-		delay: '0',
-		duration: '3000',
+		//pauseOnHover: 'item',
+		delay: '200',
+		duration: '2000',
 		thumbSizing: '95%',
 		animations: 'slideColumn',
 		fixedClass: 'fixed'
