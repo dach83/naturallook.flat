@@ -1,20 +1,15 @@
-// СТИЛИ ГЛАВНОЙ СТРАНИЦЫ
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+/* STUDIO STYLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .page-studio {
 
   // заголовки главной
   h2 {
-    color: rgba($darkGreen, .8);
-  }
-
-  // на главной страницы цвет заголовка и меню отличаются
-  header {
-    background-color: $lightGray;
+    color: rgba($clStudioHeader, .8);
   }
 
   nav, footer {
-    background-color: $logoGreen;
+    background-color: $bgStudioFooter;
   }
 
   // СТРОКА ЗАГОЛОВКА
@@ -60,12 +55,12 @@
       height: 68px;
       width: 500%;
     }
-  }
+  } // .head-row
 
 
   // ЧЕМ МЫ ЗАНИМАЕМСЯ?
   .services {
-    background-color: $lightGreen;
+    background-color: $bgStudioServices;
 
     .arm {
       @extend .bg-img;
@@ -90,20 +85,32 @@
       max-width: 150px;
     }
 
-  }
+  } // .services
 
 
   // НАШИ РАБОТЫ 
   .portfolio {
     .btn {
-      background-color: $btnBlue;
+      background-color: $bgStudioBtnPortfolio;
     }
-  }
+
+    // цвет фона magicwall
+    .magicwall-grid, 
+    .magicwall li .hover-content {
+      background-color: $bgStudioMagic;
+    }
+
+    // цвет кнопок magicwall
+    .magicwall li .hover-content .btn {
+      background: $bgStudioBtnMagic;
+    }
+
+  } // .portfolio
 
 
   // СКОЛЬКО ЭТО СТОИТ?
   .prices {
-    background-color: $lightYellow;
+    background-color: $bgStudioPrices;
 
     .arm {
       @extend .bg-img;
@@ -128,17 +135,17 @@
     }
 
     .btn {
-      background-color: $btnGreen;
+      background-color: $bgStudioBtnPrices;
     }
 
-  }
+  } // .prices
 
 
   // ХОТИТЕ ДЕШЕВЛЕ?
   .promo {
     .btn {
-      background-color: $btnPink;
+      background-color: $bgStudioBtnPromo;
     }
-  }
+  } // .promo
   
 }

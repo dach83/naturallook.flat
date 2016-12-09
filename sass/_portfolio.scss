@@ -1,87 +1,79 @@
-// СТИЛИ СТРАНИЦЫ ПОРТФОЛИО
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+/* PORTFOLIO STYLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .page-portfolio {
 
-  header, footer {
-    background-color: $btnPink;
-  }
+	header, footer {
+		background-color: $bgPortfolioFooter;
+	}
+
+	.btn {
+		background-color: $bgPortfolioButtons;
+	}	
 
 	header {
 
 		.arm {
-      @extend .bg-img;
-      background: url("../img/arm/point-arm.png") right top no-repeat;
-      right: 0;
-      top: 0;;
+			@extend .bg-img;
+			background: url("../img/arm/point-arm.png") right top no-repeat;
+			right: 0;
+			top: 0;;
 
-      height: 100%;
-      width: 30%;
-      max-width: 330px;
-    }
-
-    /*
-    .sleeve {
-      @extend .bg-img;
-      background: url("../img/arm/point-sleeve.png") right top repeat-y;
-      top: 0;
-      right: 2%;
-
-      height: 5%;
-      width: 30%;
-      max-width: 330px;
-    }
-    */
-		
+			height: 100%;
+			width: 30%;
+			max-width: 330px;
+		}
 	}
 
 	section {
-		overflow: hidden;
+		//overflow: hidden;
 
 		h2 {
-    	color: rgba($btnPink, .8);
-    }
+			color: $clPortfolioHeader;
+		}
 
+		// четные разделы
+		// ------------------------------
+		.portfolio-text-wrapper {
+			padding: 2rem 0;
+			min-height: 200px;
+			width: 60%;
+			margin-left: 40%;
+			text-align: center;
+			
+			p {
+				text-align: left;
+			}
+		}
+
+		.outer {
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 35%;
+			max-width: 300px;
+		}
+
+
+		// нечетные разделы
+		// ------------------------------
 		&:nth-child(odd) {
-			background-color: darken($lightGray, 2%);
+			background-color: $bgPortfolioEvnSect;
 
 			.portfolio-text-wrapper {
 				margin-left: 0;
-				
-				h2, p {
-					//text-align: left;
-				}
-
 			}
 
+			.outer {
+				left: auto;
+				right: 0;
+			}
 		}
 
-	}
+	} // section
 
-	.portfolio-text-wrapper {
-		padding: 2rem 0;
-		//position: relative;
-		min-height: 200px;
-		width: 60%;
-		margin-left: 40%;
-		text-align: center;
-		
-		h2, p {
-			//text-align: right;
-		}
-
-	}
-
-	.outer {
-		position: absolute;
-		overflow: hidden;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 35%;
-		max-width: 300px;
-		
-	}
-
+	
 	.magicwall { 
 		margin: auto;
 		position: absolute;
@@ -90,13 +82,8 @@
 		right: 0;
 		bottom: 0;
 		width: 100%;
-		//height: 100%;
-
 	}
-	
-	.btn {
-		background-color: $btnBlue;
-	}	
 
 
-}
+} // .page-portfolio
+

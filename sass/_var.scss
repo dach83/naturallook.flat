@@ -1,15 +1,37 @@
+// цвета логотипа
 $logoGreen   : #8cbeb3;
 $logoYellow  : #fce2c2;
 
-$lightGray	 : hsl(0, 0%, 96%);  // светло-серый цвет фона
-$lightGreen  : #e1eeeb;
-$darkGreen   : #258282;
-$magicGreen  : #9dc8be;
-$btnBlue     : #7ab1d6;
-$btnGreen    : #258282;
-$btnPink     : #e27584;
-$lightYellow : rgba($logoYellow, .8);//#fae2cd;
+
+// основные цвета страниц
+$bgPageGray : hsl(0, 0%, 96%);                // светло серый
+$bgPageBlue : #7ab1d6;                        // голубой
+$bgPageGreen: #258282;                        // темно-зеленый
+$bgPagePink : #e27584;                        // розовый
 
 
-$blueText    : rgba(#425864, .7);       // темно-синий цвет текста
-$whiteText   : hsla(0, 0%, 100%, .7);  // белый цвет ссылок
+// цвет текста
+$clBlackText     : rgba(#425864, .7);         // темный цвет текста
+$clWhiteText     : rgba(white, .7);           // светлый цвет текста
+
+
+// цвета на главной странице
+$clStudioHeader      : rgba($bgPageGreen, .8); // цвет текста заголовка
+$bgStudioFooter      : $logoGreen;   					 // цвет фона футера
+$bgStudioServices    : //#e1eeeb;
+                       rgba($logoGreen,  .4);  // цвет фона раздела "Чем мы занимаемся?"
+$bgStudioPrices      : rgba($logoYellow, .8);  // цвет фона раздела "Сколько это стоит?"
+$bgStudioMagic       : #9dc8be;                // цвет фона magicwall
+$bgStudioBtnMagic    : $bgPageGreen;           // цвет фона кнопок magicwall
+$bgStudioBtnPortfolio: $bgPageBlue;            // цвет кнопки "Смотреть портфолио"
+$bgStudioBtnPrices   : $bgPageGreen;           // цвет кнопки "Бесплатная консультация"
+$bgStudioBtnPromo    : $bgPagePink;            // цвет кнопки "Подписка на акции"
+
+
+// цвета на странице портфолио
+$clPortfolioHeader : rgba($bgPagePink, .8);   // цвет текста заголовка
+$bgPortfolioFooter : $bgPagePink;             // цвет фона шапки и футера
+$bgPortfolioOddSect: $bgPageGray;		          // цвет фона нечетных разделов
+$bgPortfolioEvnSect: darken($bgPageGray, 5%); // цвет фона четных разделов
+$bgPortfolioButtons: $bgPagePink;             // цвет фона кнопок 
+

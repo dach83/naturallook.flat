@@ -1,6 +1,7 @@
-/* ======================================================================= */
 /* MAGICWALL STYLES
-/* ======================================================================= */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
 .magicwall {
   position: relative;
   display: block; 
@@ -113,7 +114,7 @@
   opacity: 0;
   text-align: center;
   color: #fff;
-  background: $magicGreen; 
+  //background: $magicGreen; 
   transition: opacity 150ms ease-out;
 }
 
@@ -132,6 +133,6 @@
   font-size: 1rem;
   margin: 0;
   padding: 0.3rem 0;
-  background: $darkGreen;
+  //background: $darkGreen;
 }
 
