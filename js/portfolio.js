@@ -22,12 +22,14 @@ $(function(){
 
 			var rowsCount = Math.floor (availHeight / imgHeight);
 
+			/*
 			console.log ('   availH=' + availHeight + 
 				           '   availW=' + availWidth  + 
 				           '   imgW='   + imgWidth    + 
 				           '   imgH='   + imgHeight   + 
 				           '  rowsCount=' + rowsCount + 
 				           '  colsCount=' + colsCount);
+			*/
 
 			$this.magicWall('option', 'rowsCount', rowsCount);
 			$this.magicWall('option', 'columnsCount', colsCount);
@@ -53,7 +55,7 @@ $(function(){
 		paused: 'true',
 		loadingMode: 'chain',
 		preloadBeforeSwitch: 'true',
-		pauseOnHover: 'item',
+		pauseOnHover: 'all',
 		//delay: '500',
 		//duration: '800',
 		thumbSizing: '95%',
@@ -82,5 +84,29 @@ $(function(){
 
 	}); 
 
+
+
+
+	// Щелкнули по кнопке галлерея
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+	$('.popup-gallery').click (function (e){
+		e.preventDefault();
+		var mw = $(this).parent('div').find('.magicwall');
+		
+		mw.magnificPopup('open');
+	});
+
+
+	// Инициализация magnific-popup
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+	$('.magicwall').magnificPopup({
+		delegate: 'a', 
+		type: 'image',
+		gallery: {
+   		enabled:true,
+   	}
+	});
 
 }); // ready
