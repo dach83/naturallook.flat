@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
     //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
     function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
         dragElement.on("mousedown vmousedown", function(e) {
-            dragElement.addClass('draggable');
+            dragElement.addClass('cd-draggable');
             resizeElement.addClass('resizable');
 
             var dragWidth = dragElement.outerWidth(),
@@ -76,12 +76,12 @@ jQuery(document).ready(function($){
                         : requestAnimationFrame(function(){animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);});
                 }
             }).on("mouseup vmouseup", function(e){
-                dragElement.removeClass('draggable');
+                dragElement.removeClass('cd-draggable');
                 resizeElement.removeClass('resizable');
             });
             e.preventDefault();
         }).on("mouseup vmouseup", function(e) {
-            dragElement.removeClass('draggable');
+            dragElement.removeClass('cd-draggable');
             resizeElement.removeClass('resizable');
         });
     }
@@ -97,8 +97,8 @@ jQuery(document).ready(function($){
 
         var widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
         
-        $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
-            $(this).removeClass('draggable');
+        $('.cd-draggable').css('left', widthValue).on("mouseup vmouseup", function() {
+            $(this).removeClass('cd-draggable');
             resizeElement.removeClass('resizable');
         });
 

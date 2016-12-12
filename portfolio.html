@@ -22,7 +22,9 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon72.png" />
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/favicon114.png" />
 
-	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<!--link rel="stylesheet" href="css/magnific-popup.css" /-->
+	<link rel="stylesheet" href="libs/slick/slick.css" />
+	<link rel="stylesheet" href="libs/slick/slick-theme.css" />
 	<link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -77,7 +79,7 @@
 					Vitae, mollitia. Eius sit ad alias quam molestiae iusto ex cum fugit 
 					dignissimos.
 				</p>	
-				<a href="" class="btn popup-gallery">Галерея</a>
+				<a href="" class="btn">Галерея</a>
 
 				<div class="outer">
 					<div class="magicwall">
@@ -408,6 +410,72 @@
 	</footer>
 
 
+	<!-- Галерея работ
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="overlay"></div>
+	<div class="modal">
+
+			<!-- изображение до-после -->
+			<figure class="cd-image-container">
+				<img src='img/portfolio/img01-after.jpg' />
+				<span class="cd-image-label" data-type="modified">После</span>
+
+				<div class="cd-resize-img"> 
+					<img src='img/portfolio/img01-before.jpg' />
+					<span class="cd-image-label" data-type="original">До</span>
+				</div>
+
+				<span class="cd-image-description">Татуаж губ. Акварельная техника.</span>
+				<span class="cd-handle"></span> 
+				<!--span class="cd-prev"  data-type="original"></span>
+				<span class="cd-next" data-type="modified"></span-->
+			</figure> 
+
+			<div class="slider-thumb">
+				<div>
+					<img src="img/portfolio/img01-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img02-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img03-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img04-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img05-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img05-thumb.jpg" alt="">
+				</div>
+
+				<div>
+					<img src="img/portfolio/img01-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img02-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img03-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img04-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img05-thumb.jpg" alt="">
+				</div>
+				<div>
+					<img src="img/portfolio/img05-thumb.jpg" alt="">
+				</div>
+			</div>
+			
+
+	</div> <!-- .popup-gallery -->
+
+
+
 	<!-- Эти скрипты общие для всех страниц
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <!--[if lt IE 9]>
@@ -428,8 +496,10 @@
 	<script src="libs/magicwall/jquery.easing.min.js"></script>
 	<script src="libs/magicwall/jquery.magicwall.min.js"></script>
 	<script src="libs/hoverDelay-master/jquery.hoverDelay.min.js"></script>
-	
-	<script src="libs/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+
+	<script src="libs/image-comparison-slider/main.js"></script>
+	<script src="libs/slick/slick.min.js"></script>
+	<!--script src="libs/Magnific-Popup/jquery.magnific-popup.min.js"></script-->
 
 	<script src="js/portfolio.min.js"></script>
 
