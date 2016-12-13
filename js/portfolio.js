@@ -85,7 +85,6 @@ $(function(){
 	}); 
 
 
-
 	// Слайдер
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 	/*
@@ -97,9 +96,11 @@ $(function(){
 		asNavFor: '.slider-nav'
 	});
 	*/
+
+	/*
 	$('.slider-thumb').slick({
 		//arrows: false,
-		slidesToShow: 5,
+		slidesToShow: 7,
 		slidesToScroll: 0,
 		//asNavFor: '.slider-for',
 		dots: false,
@@ -116,6 +117,7 @@ $(function(){
       }
     }],
 	});
+	*/
 
 	// Щелкнули по кнопке галлерея
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 

@@ -53,7 +53,6 @@ html, body {
   border: 0;
   font: normal 16px/1.7 "Raleway", sans-serif;
   width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -63,6 +62,10 @@ body {
   min-width: 320px;
   position: relative;
   background-color: white;
+  overflow-x: hidden;
+  &.open-modal {
+    overflow: hidden;
+  }
 }
 
 header, footer, section {
@@ -202,8 +205,6 @@ li {
   top: 0;
   left: 0;
   z-index: 1000;
-
-
 
   //display: none;
 }

@@ -6,8 +6,15 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 .cd-image-container {
-  width: 80%;
-  margin: 5% auto;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 80vh;
+  //height: 70%;
+  height: 60vh;
+  top: 5vh;
+  //transform: translateY(-80vh);  
+
+  //margin: 5% auto;
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -16,6 +23,7 @@
 .cd-image-container img {
   display: block;
   width: 100%;
+  //height: 100%;
 }
 
 .cd-image-label {
@@ -207,22 +215,23 @@
 // Стили миниатюр
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-.slider-thumb {
-  margin: 0 auto;
-  width: 90%;
-  //bottom: 1%;
+.gallery-thumb-list {
+  position: fixed;
+  left: 0;
+  bottom: 3vh;
+  //width: 100%;
+  height: 20vh;
+  max-height: 150px;
+  white-space: nowrap;
   
+  li {
+    height: 100%;
+    margin-right: 1vh;
+  }
+
   img {
-    padding: 2% 0;
-    margin: 0 auto;
-    width: 85%;
-    cursor: pointer;
-    transition: all .5s;
+    height: 100%;
+    width: auto;
   }
 
-  .slick-center img {
-    transform: scale(1.1);
-
-    //width: 230px;
-  }
 }
