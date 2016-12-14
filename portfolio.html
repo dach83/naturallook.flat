@@ -22,7 +22,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon72.png" />
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/favicon114.png" />
 
-	<!--link rel="stylesheet" href="css/magnific-popup.css" /-->
+
 	<link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -408,28 +408,21 @@
 	</footer>
 
 
-	<!-- Галерея работ
+	<!-- Модальные окна
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div class="overlay">
 		<i class="presswall"></i>
 	</div>
 	<div class="modal gallery">
-		<i class="logo"></i>
 
-		<!-- кнопки -->
-		<div class="toolbar">
-			<a href="" alt="Закрыть" title="Закрыть"><span class="icon-cross"></span></a>
-		</div>
-		
 		<!-- фотография работы -->
-		<div class="picture">
+		<div class="photo">
 			<img src="img/portfolio/img01-before.jpg" alt="" class="before">
 			<img src="img/portfolio/img01-after.jpg" alt="" class="after">
-
 		</div>
 
 		<!-- миниатюры работ -->
-		<div class="thumbs">
+		<div class="thumb">
 			<ul>
 				<li><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
 				<li class="active"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
@@ -451,10 +444,18 @@
 				<li><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
 				<li><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
 				<li><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
-
 			</ul>
 		</div>
 	</div> <!-- .modal.gallery -->
+	
+	<!-- панель управления модальным окном -->
+	<div class="modal-toolbar">
+		<span class="counter">2/18</span>
+		<div class="modal-control">
+			<!--a href="" alt="Слайдшоу" title="Слайдшоу"><span class="icon-play"></span></a-->
+			<a href="" alt="Закрыть" title="Закрыть"><span class="icon-cross"></span></a>
+		</div>
+	</div>	
 
 
 	<!-- Эти скрипты общие для всех страниц
@@ -478,7 +479,9 @@
 	<script src="libs/magicwall/jquery.magicwall.min.js"></script>
 	<script src="libs/hoverDelay-master/jquery.hoverDelay.min.js"></script>
 
-	<script src="libs/image-comparison-slider/main.js"></script>
+	<!--script src="libs/image-comparison-slider/main.js"></script-->
+	<script src="libs/twentytwenty/jquery.twentytwenty.js"></script>
+	<script src="libs/twentytwenty/jquery.event.move.js"></script>
 
 	<script src="js/portfolio.min.js"></script>
 	<script src="js/gallery.min.js"></script>

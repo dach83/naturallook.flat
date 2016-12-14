@@ -205,16 +205,17 @@ li {
     height: 100%;
     width: 100%;
     background: url("../img/presswall.png") repeat;
-    background-size: 200px;
-    background-position: -10% -10%;
+    background-size: 150px;
+    background-position: -75px -75px;
     //transform: rotate(-30deg);
     //margin-top: -50%;
     opacity: 0.05;
   }
+
 }
 
 .modal {
-  margin: 0;
+  box-sizing: border-box;
   padding: 0;
 
   width: 100%;
@@ -227,10 +228,51 @@ li {
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 1000;
 
   //background-color: rgba($logoGreen, .3);
   //display: none;
+}
+
+.modal-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  padding: 0 15px 0;
+  box-sizing: border-box;
+
+  //text-align: right;
+  font-size: 2rem;
+  color: $clWhiteText;
+
+  z-index: 1001;
+  background-color: rgba(black, .2);
+  
+  //display: none;
+  
+  a {
+    text-decoration: none; 
+    vertical-align: middle;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  .counter {
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+
+  .modal-control {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 100%;
+  }
 }
 
 

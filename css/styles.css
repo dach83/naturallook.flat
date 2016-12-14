@@ -88,7 +88,8 @@ p {
 a, button {
   outline: 0 !important;
   color: rgba(255, 255, 255, 0.7);
-  transition: color .3s; }
+  -webkit-transition: color .3s;
+          transition: color .3s; }
 
 a:hover,
 a:active {
@@ -139,7 +140,9 @@ li {
 .vcenter {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .overlay {
   width: 100%;
@@ -154,12 +157,12 @@ li {
     height: 100%;
     width: 100%;
     background: url("../img/presswall.png") repeat;
-    background-size: 200px;
-    background-position: -10% -10%;
+    background-size: 150px;
+    background-position: -75px -75px;
     opacity: 0.05; }
 
 .modal {
-  margin: 0;
+  box-sizing: border-box;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -168,6 +171,31 @@ li {
   top: 0;
   left: 0;
   z-index: 1000; }
+
+.modal-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 15px 0;
+  box-sizing: border-box;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.2); }
+  .modal-toolbar a {
+    text-decoration: none;
+    vertical-align: middle; }
+  .modal-toolbar a:hover {
+    color: white; }
+  .modal-toolbar .counter {
+    font-size: 1.3rem;
+    vertical-align: middle; }
+  .modal-toolbar .modal-control {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 100%; }
 
 .btn {
   color: rgba(255, 255, 255, 0.7);
@@ -184,14 +212,16 @@ li {
   border-radius: 5px;
   margin: 2rem 0 2rem;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-  transition: box-shadow 300ms; }
+  -webkit-transition: box-shadow 300ms;
+          transition: box-shadow 300ms; }
   .btn:hover {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5); }
   .btn:active {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-    transition: box-shadow 100ms; }
+    -webkit-transition: box-shadow 100ms;
+            transition: box-shadow 100ms; }
 
 .bg-img, footer .cofe.arm, footer .cofe.sleeve, footer .cake.arm, .page-studio .head-row .logo, .page-studio .head-row .arm, .page-studio .head-row .sleeve, .page-studio .services .arm, .page-studio .services .sleeve, .page-studio .prices .arm, .page-studio .prices .sleeve, .page-portfolio header .arm {
   display: block;
@@ -214,7 +244,9 @@ li {
     top: 50%;
     left: 0;
     max-width: 330px;
-    transform: translate(0, -50%); }
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
   .head-row h1 {
     color: white;
     margin: 0;
@@ -291,9 +323,6 @@ footer {
   margin-top: -30px;
   margin-left: -30px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -343,9 +372,6 @@ footer {
   margin-top: -20px;
   margin-left: -20px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -363,7 +389,8 @@ footer {
   opacity: 0;
   text-align: center;
   color: #fff;
-  transition: opacity 150ms ease-out; }
+  -webkit-transition: opacity 150ms ease-out;
+          transition: opacity 150ms ease-out; }
 
 .magicwall li:hover .hover-content {
   opacity: 1; }
@@ -373,7 +400,9 @@ footer {
   top: 50%;
   left: 10%;
   width: 80%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-size: 1rem;
   margin: 0;
   padding: 0.3rem 0; }
@@ -507,78 +536,52 @@ footer {
 
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.gallery {
-  /*
-  .logo {
+.gallery .photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 12%;
+  width: 100%;
+  z-index: 1; }
+  .gallery .photo img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width: 94%;
+    max-height: 94%; }
+.gallery .thumb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 12%;
+  width: 100%;
+  z-index: 2; }
+  .gallery .thumb ul {
     height: 100%;
     width: 100%;
-    background-image: url("../img/logo.svg");
-    background-repeat: repeat;
-    background-size: 200px;
-    opacity: 0.1;
-  }
-  */ }
-  .gallery .toolbar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 50px;
-    width: 100%;
-    z-index: 2;
-    padding: 5px 10px 0;
-    box-sizing: border-box;
-    text-align: right;
-    font-size: 28px; }
-    .gallery .toolbar a {
-      text-decoration: none; }
-      .gallery .toolbar a:hover {
-        color: white; }
-    .gallery .toolbar [class^="icon-"] {
-      height: 100%;
-      line-height: 100%; }
-  .gallery .picture {
-    position: absolute;
-    left: 0;
-    top: 50px;
-    bottom: 12%;
-    width: 100%;
-    z-index: 1; }
-    .gallery .picture img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 94%;
-      max-height: 94%; }
-  .gallery .thumbs {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 12%;
-    width: 100%;
-    z-index: 2; }
-    .gallery .thumbs ul {
-      height: 100%;
-      width: 100%;
-      margin: 0 .5vh;
-      padding: 0;
-      white-space: nowrap; }
-    .gallery .thumbs li {
-      height: 100%;
-      margin: 0 .5vh; }
-    .gallery .thumbs .active {
-      transform: scale(1.1);
-      margin: 0 1vh; }
-    .gallery .thumbs img {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 80%;
-      max-height: 120px;
-      cursor: pointer; }
+    margin: 0 .5vh;
+    padding: 0;
+    white-space: nowrap; }
+  .gallery .thumb li {
+    height: 100%;
+    margin: 0 .5vh; }
+  .gallery .thumb .active {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    margin: 0 1vh; }
+  .gallery .thumb img {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    height: 80%;
+    max-height: 120px;
+    cursor: pointer; }
 
 /* MEDIA STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

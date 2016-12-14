@@ -1,60 +1,14 @@
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-$pictureTop   : 50px;
+$pictureTop   : 0;//50px;
 $pictureBottom: 12%;//150px;
 
 
 .gallery {
 
-  /*
-  .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("../img/logo.svg");
-    background-repeat: repeat;
-    background-size: 200px;
-    opacity: 0.1;
-  }
-  */
-
-  // разные кнопки 
-  .toolbar {
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    height: $pictureTop;
-    width: 100%;
-    //background-color: rgba(red, .3);
-    z-index: 2;
-    
-    padding: 5px 10px 0;
-    box-sizing: border-box;
-
-    text-align: right;
-    font-size: 28px;
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        color: white;
-      }
-
-    }
-
-    [class^="icon-"] {
-      height: 100%;
-      line-height: 100%;
-    }
-  }
-
-  // главное изображение
-  .picture { 
+  // фотография
+  .photo { 
     position: absolute;
     left: 0;
     top: $pictureTop;
@@ -75,8 +29,8 @@ $pictureBottom: 12%;//150px;
     }
   }
 
-  // миниатюры
-  .thumbs {
+  // список превьюшек
+  .thumb {
     position: absolute;
     left: 0;
     //top: $pictureBottom;
