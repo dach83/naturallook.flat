@@ -1,237 +1,121 @@
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-// Стили шторки До-После
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-.cd-image-container {
-  margin: 0 auto;
-  max-width: 900px;
-  width: 80vh;
-  //height: 70%;
-  height: 60vh;
-  top: 5vh;
-  //transform: translateY(-80vh);  
-
-  //margin: 5% auto;
-  position: relative;
-  padding: 0;
-  overflow: hidden;
-}
-
-.cd-image-container img {
-  display: block;
-  width: 100%;
-  //height: 100%;
-}
-
-.cd-image-label {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: white;
-  padding: 1em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.cd-image-description {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  max-width: 70%;
-  padding: 0;
-  margin: 0;
-  color: white;
-  padding: 1em;
-  text-align: right;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.cd-image-description:hover {
-  border-radius: 0 0 0 3px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.cd-resize-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  overflow: hidden;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.cd-resize-img img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: block;
-  height: 100%;
-  //width: 100%;
-  width: auto;
-  max-width: none;
-}
-
-.cd-resize-img .cd-image-label {
-  right: auto;
-  left: 0;
-}
-
-.is-visible .cd-resize-img {
-  width: 50%;
-  animation: cd-bounce-in 0.7s;
-  //animation-delay: 0.5s;
-}
-
-@-webkit-keyframes cd-bounce-in {
-  0% {
-    width: 0;
-  }
-  60% {
-    width: 55%;
-  }
-  100% {
-    width: 50%;
-  }
-}
-
-@-moz-keyframes cd-bounce-in {
-  0% {
-    width: 0;
-  }
-  60% {
-    width: 55%;
-  }
-  100% {
-    width: 50%;
-  }
-}
-
-@keyframes cd-bounce-in {
-  0% {
-    width: 0;
-  }
-  60% {
-    width: 55%;
-  }
-  100% {
-    width: 50%;
-  }
-}
-
-.cd-handle {
-  position: absolute;
-  height: 44px;
-  width: 44px;
-  left: 50%;
-  top: 50%;
-  margin-left: -22px;
-  margin-top: -22px;
-  border-radius: 50%;
-  background: url("../img/slider/handle.png") no-repeat center center;
-  background: url("../img/slider/handle.svg") no-repeat center center;
-}
-
-.cd-prev {
-  position: absolute;
-  height: 44px;
-  width: 44px;
-  left: 0;
-  top: 50%;
-  margin-left: -22px;
-  margin-top: -22px;
-  border-radius: 50%;
-  background: url("../img/slider/slider.png") no-repeat center center;
-  background: url("../img/slider/slider.svg") no-repeat center center;
-}
-
-.cd-next {
-  position: absolute;
-  height: 44px;
-  width: 44px;
-  right: 0;
-  top: 50%;
-  margin-right: -22px;
-  margin-top: -22px;
-  border-radius: 50%;
-  background: url("../img/slider/slider.png") no-repeat center center;
-  background: url("../img/slider/slider.svg") no-repeat center center;
-}
-
-.cd-handle,
-.cd-prev,
-.cd-next {
-  opacity: 0;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  //box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
-  //transition: box-shadow .5s;
-  transform: translate3d(0, 0, 0) scale(0);
-}
+$pictureTop   : 50px;
+$pictureBottom: 12%;//150px;
 
 
-// Анимация текстовых надписей
-.cd-image-description,
-.cd-image-label  {
-  opacity: 0;
-  transform: translateY(20px);
-}
+.gallery {
 
-.is-visible .cd-image-description,
-.is-visible .cd-image-label  {
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
-}
-
-
-// Анимация стрелок слайдера
-.cd-handle:hover,
-.cd-prev:hover,
-.cd-next:hover {
-  background-color: transparent;//$hoverGreen;
-  //box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.is-visible .cd-handle,
-.is-visible .cd-prev,
-.is-visible .cd-next {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-  transition: transform 0.3s 0.7s, opacity 0s 0.7s;
-}
-
-.cd-image-container span.is-hidden {
-  visibility: hidden;
-}
-
-
-// Стили миниатюр
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-.gallery-thumb-list {
-  position: fixed;
-  left: 0;
-  bottom: 3vh;
-  //width: 100%;
-  height: 20vh;
-  max-height: 150px;
-  white-space: nowrap;
-  
-  li {
+  /*
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    margin-right: 1vh;
+    width: 100%;
+    background-image: url("../img/logo.svg");
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.1;
+  }
+  */
+
+  // разные кнопки 
+  .toolbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: $pictureTop;
+    width: 100%;
+    //background-color: rgba(red, .3);
+    z-index: 2;
+    
+    padding: 5px 10px 0;
+    box-sizing: border-box;
+
+    text-align: right;
+    font-size: 28px;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+
+    }
+
+    [class^="icon-"] {
+      height: 100%;
+      line-height: 100%;
+    }
   }
 
-  img {
-    height: 100%;
-    width: auto;
+  // главное изображение
+  .picture { 
+    position: absolute;
+    left: 0;
+    top: $pictureTop;
+    bottom: $pictureBottom;
+    width: 100%;
+    z-index: 1;
+    //background-color: rgba(gold, .3);
+
+    img { 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);  
+      //box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+
+      max-width: 94%;
+      max-height: 94%;
+    }
+  }
+
+  // миниатюры
+  .thumbs {
+    position: absolute;
+    left: 0;
+    //top: $pictureBottom;
+    bottom: 0;
+
+    height: $pictureBottom;
+    width: 100%;
+    //background-color: rgba(green, .3);
+    z-index: 2;
+
+    ul {
+      height: 100%;
+      width: 100%;
+      margin: 0 .5vh;
+      padding: 0;
+      white-space: nowrap;
+    } 
+
+    li {
+      height: 100%;
+      margin: 0 .5vh;
+    }   
+
+    .active {
+      transform: scale(1.1);
+      margin: 0 1vh;
+      //padding: 0 10px;
+    }
+
+    img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);  
+      height: 80%;
+      max-height: 120px;
+      cursor: pointer;
+    }
+
   }
 
 }
+
