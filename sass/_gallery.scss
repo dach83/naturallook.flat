@@ -3,6 +3,7 @@
 
 $pictureTop   : 0;//50px;
 $pictureBottom: 12%;//150px;
+$photoHeight: 88%;
 
 
 .gallery {
@@ -10,23 +11,92 @@ $pictureBottom: 12%;//150px;
   // фотография
   .photo { 
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 0;
-    top: $pictureTop;
-    bottom: $pictureBottom;
-    width: 100%;
+    right: 0;
+    margin: auto;
+    width: 96%;
     z-index: 1;
     //background-color: rgba(gold, .3);
 
-    img { 
-      position: absolute;
+    .before-after {
+      display: inline-block;
+      position: relative;
+      margin: auto;
+      background-color: #FFF;
+      overflow: hidden;
+      
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);  
-      //box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+      transform: translateY(-55%);  
+      
+      .curtain {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+      }
 
-      max-width: 94%;
-      max-height: 94%;
+      .before {
+        height: 100%;
+        opacity: 1;
+      }
+
+      .after {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        max-height: 60vh;
+        max-width: 100%;
+        opacity: 1;
+      }
+
+      .btn {
+        position: absolute;
+        top: 50%;
+        width: 3rem;
+        height: 3rem;
+
+        margin: 0;
+        padding: 0;
+
+        margin-top: -1.5rem;
+        margin-left: -1.5rem;
+        
+        border: 1px solid rgba(black, .3);
+        border-radius: 50%;   
+
+        //transition: box-shadow 200ms;     
+      }
+
+      .handle {
+        left: 50%;
+        background: url("../img/slider/handle.png") center no-repeat;
+      }
+  
+      .prev {
+        left: 0;
+        background: url("../img/slider/slider.png") center no-repeat; 
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
+
+        &:hover {
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+        }
+
+        &:active {
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);          
+        }
+      }
+
+      .next {
+        left: 100%;
+        background: url("../img/slider/slider.png") center no-repeat;  
+      }
+
     }
+
   }
 
   // список превьюшек
@@ -36,8 +106,12 @@ $pictureBottom: 12%;//150px;
     //top: $pictureBottom;
     bottom: 0;
 
-    height: $pictureBottom;
+    height: 12vh;
     width: 100%;
+    
+    max-height: 120px;
+    min-height: 60px;
+    
     //background-color: rgba(green, .3);
     z-index: 2;
 
@@ -47,6 +121,7 @@ $pictureBottom: 12%;//150px;
       margin: 0 .5vh;
       padding: 0;
       white-space: nowrap;
+      background-color: rgba(black, .3);
     } 
 
     li {
@@ -65,7 +140,7 @@ $pictureBottom: 12%;//150px;
       top: 50%;
       transform: translateY(-50%);  
       height: 80%;
-      max-height: 120px;
+
       cursor: pointer;
     }
 
