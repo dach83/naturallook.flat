@@ -14,8 +14,8 @@
   src: url("../fonts/Raleway/RalewayMedium.eot?") format("eot"), url("../fonts/Raleway/RalewayMedium.woff2") format("woff2"), url("../fonts/Raleway/RalewayMedium.woff") format("woff"), url("../fonts/Raleway/RalewayMedium.ttf") format("truetype"), url("../fonts/Raleway/RalewayMedium.svg#Raleway") format("svg"); }
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon/icomoon.eot?tm3pxx");
-  src: url("../fonts/icomoon/icomoon.eot?tm3pxx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?tm3pxx") format("truetype"), url("../fonts/icomoon/icomoon.woff?tm3pxx") format("woff"), url("../fonts/icomoon/icomoon.svg?tm3pxx#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?y52zys");
+  src: url("../fonts/icomoon/icomoon.eot?y52zys#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?y52zys") format("truetype"), url("../fonts/icomoon/icomoon.woff?y52zys") format("woff"), url("../fonts/icomoon/icomoon.svg?y52zys#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -31,23 +31,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-pause:before {
-  content: "\e905"; }
-
-.icon-stop:before {
-  content: "\e906"; }
-
-.icon-play:before {
-  content: "\e907"; }
-
-.icon-cross:before {
-  content: "\e908"; }
-
 .icon-instagram:before {
-  content: "\e900"; }
+  content: "\e90c"; }
 
 .icon-vk:before {
+  content: "\e900"; }
+
+.icon-close:before {
+  content: "\e906"; }
+
+.icon-pause:before {
   content: "\e901"; }
+
+.icon-stop:before {
+  content: "\e902"; }
+
+.icon-play:before {
+  content: "\e903"; }
+
+.icon-prev:before {
+  content: "\e904"; }
+
+.icon-next:before {
+  content: "\e905"; }
 
 html, body {
   margin: 0;
@@ -88,7 +94,8 @@ p {
 a, button {
   outline: 0 !important;
   color: rgba(255, 255, 255, 0.7);
-  transition: color .3s; }
+  -webkit-transition: color .3s;
+          transition: color .3s; }
 
 a:hover,
 a:active {
@@ -139,7 +146,9 @@ li {
 .vcenter {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .overlay {
   width: 100%;
@@ -209,14 +218,16 @@ li {
   border-radius: 5px;
   margin: 2rem 0 2rem;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-  transition: box-shadow 300ms; }
+  -webkit-transition: box-shadow 300ms;
+          transition: box-shadow 300ms; }
   .btn:hover {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5); }
   .btn:active {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-    transition: box-shadow 100ms; }
+    -webkit-transition: box-shadow 100ms;
+            transition: box-shadow 100ms; }
 
 .bg-img, footer .cofe.arm, footer .cofe.sleeve, footer .cake.arm, .page-studio .head-row .logo, .page-studio .head-row .arm, .page-studio .head-row .sleeve, .page-studio .services .arm, .page-studio .services .sleeve, .page-studio .prices .arm, .page-studio .prices .sleeve, .page-portfolio header .arm {
   display: block;
@@ -239,7 +250,9 @@ li {
     top: 50%;
     left: 0;
     max-width: 330px;
-    transform: translate(0, -50%); }
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
   .head-row h1 {
     color: white;
     margin: 0;
@@ -316,9 +329,6 @@ footer {
   margin-top: -30px;
   margin-left: -30px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -368,9 +378,6 @@ footer {
   margin-top: -20px;
   margin-left: -20px;
   background: url("../img/magicwall/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -388,7 +395,8 @@ footer {
   opacity: 0;
   text-align: center;
   color: #fff;
-  transition: opacity 150ms ease-out; }
+  -webkit-transition: opacity 150ms ease-out;
+          transition: opacity 150ms ease-out; }
 
 .magicwall li:hover .hover-content {
   opacity: 1; }
@@ -398,7 +406,9 @@ footer {
   top: 50%;
   left: 10%;
   width: 80%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-size: 1rem;
   margin: 0;
   padding: 0.3rem 0; }
@@ -532,65 +542,92 @@ footer {
 
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.gallery .photo {
+.gallery a {
+  text-decoration: none; }
+  .gallery a:hover {
+    color: white; }
+.gallery .slider {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  width: 96%;
-  z-index: 1; }
-  .gallery .photo .before-after {
+  width: 80%;
+  z-index: 1;
+  text-align: center; }
+  .gallery .slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    margin: auto;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: opacity 500ms;
+            transition: opacity 500ms; }
+  .gallery .slider li.active {
+    opacity: 1;
+    z-index: 3; }
+  .gallery .slider .prev-slide, .gallery .slider .next-slide {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-55%);
+        -ms-transform: translateY(-55%);
+            transform: translateY(-55%);
+    font-size: 2.5rem; }
+  .gallery .slider .prev-slide {
+    left: -2.5rem; }
+  .gallery .slider .next-slide {
+    right: -2.5rem; }
+  .gallery .slider .before-after {
     display: inline-block;
     position: relative;
     margin: auto;
     background-color: #FFF;
     overflow: hidden;
     top: 50%;
-    transform: translateY(-55%); }
-    .gallery .photo .before-after .curtain {
+    -webkit-transform: translateY(-55%);
+        -ms-transform: translateY(-55%);
+            transform: translateY(-55%); }
+    .gallery .slider .before-after .curtain {
       position: absolute;
       margin: auto;
       top: 0;
       width: 50%;
       height: 100%;
       overflow: hidden; }
-    .gallery .photo .before-after .before {
+    .gallery .slider .before-after .before {
       height: 100%;
       opacity: 1; }
-    .gallery .photo .before-after .after {
+    .gallery .slider .before-after .after {
       box-sizing: border-box;
       position: relative;
       display: block;
       max-height: 60vh;
       max-width: 100%;
       opacity: 1; }
-    .gallery .photo .before-after .btn {
+    .gallery .slider .before-after .handle {
+      background: url("../img/slider/handle.png") center no-repeat;
+      background-size: 2rem;
       position: absolute;
       top: 50%;
+      left: 50%;
       width: 3rem;
       height: 3rem;
       margin: 0;
       padding: 0;
       margin-top: -1.5rem;
       margin-left: -1.5rem;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      border-radius: 50%; }
-    .gallery .photo .before-after .handle {
-      left: 50%;
-      background: url("../img/slider/handle.png") center no-repeat; }
-    .gallery .photo .before-after .prev {
-      left: 0;
-      background: url("../img/slider/slider.png") center no-repeat;
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
-      .gallery .photo .before-after .prev:hover {
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
-      .gallery .photo .before-after .prev:active {
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
-    .gallery .photo .before-after .next {
-      left: 100%;
-      background: url("../img/slider/slider.png") center no-repeat; }
+      border-radius: 50%;
+      -webkit-transition: box-shadow 200ms;
+              transition: box-shadow 200ms; }
+      .gallery .slider .before-after .handle:hover {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5); }
+      .gallery .slider .before-after .handle, .gallery .slider .before-after .handle.drag-handle {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.8); }
 .gallery .thumb {
   position: absolute;
   left: 0;
@@ -611,12 +648,16 @@ footer {
     height: 100%;
     margin: 0 .5vh; }
   .gallery .thumb .active {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     margin: 0 1vh; }
   .gallery .thumb img {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     height: 80%;
     cursor: pointer; }
 

@@ -1,25 +1,69 @@
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-$pictureTop   : 0;//50px;
-$pictureBottom: 12%;//150px;
-$photoHeight: 88%;
-
-
 .gallery {
 
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+
   // фотография
-  .photo { 
+  .slider { 
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 96%;
+    width: 80%;
     z-index: 1;
+    text-align: center;
     //background-color: rgba(gold, .3);
 
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      max-width: 100%;
+      margin: auto;
+
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 500ms;
+    }
+
+    li.active {
+      opacity: 1;
+      z-index: 3;
+
+    }
+
+
+    // предудущий - следующий слайд
+    .prev-slide, .next-slide {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-55%); 
+
+      font-size: 2.5rem;
+    }
+
+    .prev-slide {
+      left: -2.5rem;
+    }
+
+    .next-slide {
+      right: -2.5rem;
+    }
+
+
+    // ДО-ПОСЛЕ
     .before-after {
       display: inline-block;
       position: relative;
@@ -53,9 +97,13 @@ $photoHeight: 88%;
         opacity: 1;
       }
 
-      .btn {
+      .handle {
+        background: url("../img/slider/handle.png") center no-repeat;
+        background-size: 2rem;
         position: absolute;
         top: 50%;
+        left: 50%;
+
         width: 3rem;
         height: 3rem;
 
@@ -65,38 +113,21 @@ $photoHeight: 88%;
         margin-top: -1.5rem;
         margin-left: -1.5rem;
         
-        border: 1px solid rgba(black, .3);
+        //border: 1px solid rgba(black, .3);
         border-radius: 50%;   
-
-        //transition: box-shadow 200ms;     
-      }
-
-      .handle {
-        left: 50%;
-        background: url("../img/slider/handle.png") center no-repeat;
-      }
-  
-      .prev {
-        left: 0;
-        background: url("../img/slider/slider.png") center no-repeat; 
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
+        //box-shadow: 0 0 3px rgba(black, .8);
+        transition: box-shadow 200ms; 
 
         &:hover {
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+          box-shadow: 0 0 3px rgba(black, .8), 0 0 10px rgba(black, .5);
         }
 
-        &:active {
-          box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);          
+        &, &.drag-handle {
+          box-shadow: 0 0 3px rgba(black, .8);
         }
-      }
 
-      .next {
-        left: 100%;
-        background: url("../img/slider/slider.png") center no-repeat;  
       }
-
     }
-
   }
 
   // список превьюшек

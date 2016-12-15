@@ -9,13 +9,14 @@
 
 // ИКОНКИ ICOMOON
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon/icomoon.eot?tm3pxx');
-  src:  url('../fonts/icomoon/icomoon.eot?tm3pxx#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon/icomoon.ttf?tm3pxx') format('truetype'),
-    url('../fonts/icomoon/icomoon.woff?tm3pxx') format('woff'),
-    url('../fonts/icomoon/icomoon.svg?tm3pxx#icomoon') format('svg');
+  src:  url('../fonts/icomoon/icomoon.eot?y52zys');
+  src:  url('../fonts/icomoon/icomoon.eot?y52zys#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?y52zys') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?y52zys') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?y52zys#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,24 +36,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-pause:before {
-  content: "\e905";
-}
-.icon-stop:before {
-  content: "\e906";
-}
-.icon-play:before {
-  content: "\e907";
-}
-.icon-cross:before {
-  content: "\e908";
-}
 .icon-instagram:before {
-  content: "\e900";
+  content: "\e90c";
 }
 .icon-vk:before {
+  content: "\e900";
+}
+.icon-close:before {
+  content: "\e906";
+}
+.icon-pause:before {
   content: "\e901";
 }
+.icon-stop:before {
+  content: "\e902";
+}
+.icon-play:before {
+  content: "\e903";
+}
+.icon-prev:before {
+  content: "\e904";
+}
+.icon-next:before {
+  content: "\e905";
+}
+
 
 
 // ОБЩИЕ ДЛЯ ВСЕХ СТРАНИЦ СТИЛИ (ТЕГИ)

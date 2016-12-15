@@ -47,6 +47,87 @@ $(function(){
 		} // if (handle.length)
 	});
 
+
+
+	// Переключение слайдов
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 	
+	function ShowThisSlide (slide){
+		$(".slider li").removeClass("active");
+		slide.addClass("active");
+		slide.find(".curtain").removeAttr('style');
+		slide.find(".handle").removeAttr('style');
+		
+		/*
+		setTimeout(function (){
+			slide.find(".curtain").fadeIn(1000);
+			slide.find(".handle").fadeIn(1000);
+		}, 500);
+		*/
+	};
+
+
+	// Показ предыдущего слайда
+	function ShowPrevSlide (event){
+		event.preventDefault();
+
+		var prev = $(".slider li.active").prev();
+		if (!prev.length) {
+			prev = $(".slider li").last();
+		}
+
+		//prev.find(".curtain").fadeOut(50);
+		//prev.find(".handle").fadeOut(50);
+		ShowThisSlide(prev);
+	};
+
+
+	// Показ следующего слайда
+	function ShowNextSlide (event){
+		event.preventDefault();
+
+		var next = $(".slider li.active").next();
+		if (!next.length) {
+			next = $(".slider li").first();
+		}
+
+		//next.find(".curtain").fadeOut(50);
+		//next.find(".handle").fadeOut(50);
+		ShowThisSlide (next);
+	};
+
+
+	// щелкнули по кнопке вперед/назад
+	$("#js-prev-slide").click(ShowPrevSlide);
+	$("#js-next-slide").click(ShowNextSlide);
+
+
+	// Кнопки влево/вправо
+	// показываем предыдущую/следующую работу
+	$(document).keydown(function(event) {
+		console.log("keydown");
+
+		if (event.keyCode == 37) { 
+			ShowPrevSlide (event);	
+		}
+		if (event.keyCode == 39) { 
+			ShowNextSlide (event);	
+		}
+	});
+
+
+	// Wheel на слайдере
+	// показываем предыдущую/следующую работу
+	$(".slider").mousewheel(function (event, delta) {
+		if (delta < 0) {
+			ShowNextSlide (event);	
+		} else if (delta > 0) {
+			ShowPrevSlide (event);	
+		};
+
+		return false;
+	});
+
+
 
 });
