@@ -29,7 +29,7 @@ $(function(){
 	$(document).on("mousemove", function (event){
 		var handle = $(".drag-handle");
 		if (handle.length){
-			var container = handle.parent(".before-after");
+			var container = handle.parent(".slide");
 			var curtain   = container.find(".curtain");
 
 			// вычисляю новую позицию в процентах

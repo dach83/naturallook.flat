@@ -582,7 +582,7 @@ footer {
     left: -2.5rem; }
   .gallery .slider .next-slide {
     right: -2.5rem; }
-  .gallery .slider .before-after {
+  .gallery .slider .slide {
     display: inline-block;
     position: relative;
     margin: auto;
@@ -592,24 +592,24 @@ footer {
     -webkit-transform: translateY(-55%);
         -ms-transform: translateY(-55%);
             transform: translateY(-55%); }
-    .gallery .slider .before-after .curtain {
+    .gallery .slider .slide .curtain {
       position: absolute;
       margin: auto;
       top: 0;
       width: 50%;
       height: 100%;
       overflow: hidden; }
-    .gallery .slider .before-after .before {
+    .gallery .slider .slide .before {
       height: 100%;
       opacity: 1; }
-    .gallery .slider .before-after .after {
+    .gallery .slider .slide .after {
       box-sizing: border-box;
       position: relative;
       display: block;
       max-height: 60vh;
       max-width: 100%;
       opacity: 1; }
-    .gallery .slider .before-after .handle {
+    .gallery .slider .slide .handle {
       background: url("../img/slider/handle.png") center no-repeat;
       background-size: 2rem;
       position: absolute;
@@ -624,9 +624,9 @@ footer {
       border-radius: 50%;
       -webkit-transition: box-shadow 200ms;
               transition: box-shadow 200ms; }
-      .gallery .slider .before-after .handle:hover {
+      .gallery .slider .slide .handle:hover {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5); }
-      .gallery .slider .before-after .handle, .gallery .slider .before-after .handle.drag-handle {
+      .gallery .slider .slide .handle, .gallery .slider .slide .handle.drag-handle {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.8); }
 .gallery .thumb {
   position: absolute;
