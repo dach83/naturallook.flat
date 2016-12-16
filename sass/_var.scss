@@ -1,6 +1,27 @@
+
+// разные картинки
+$pathLogo          : "../img/other/logo.svg";
+$pathPresswall     : "../img/other/presswall.png";
+$pathHandle        : "../img/other/handle.png";
+$pathLoading       : "../img/other/loading.gif";
+
+// руки
+$pathLampArm       : "../img/arm/lamp-arm.png";
+$pathLampSleeve    : "../img/arm/lamp-sleeve.png";
+$pathLipstickArm   : "../img/arm/studio-services-arm.png";
+$pathLipstickSleeve: "../img/arm/studio-services-sleeve.png";
+$pathCoinArm       : "../img/arm/studio-prices-arm.png";
+$pathCoinSleeve    : "../img/arm/studio-prices-sleeve.png";
+$pathCofeArm       : "../img/arm/cofe-arm.png";
+$pathCofeSleeve    : "../img/arm/cofe-sleeve.png";
+$pathCakeArm       : "../img/arm/cake-arm.png";
+$pathPointArm      : "../img/arm/point-arm.png";
+
+
+
 // цвета логотипа
-$logoGreen   : #8cbeb3;
-$logoYellow  : #fce2c2;
+$logoGreen  : #8cbeb3;
+$logoYellow : #fce2c2;
 
 
 // основные цвета страниц
@@ -34,4 +55,5 @@ $bgPortfolioFooter : $bgPagePink;             // цвет фона шапки и
 $bgPortfolioOddSect: $bgPageGray;		          // цвет фона нечетных разделов
 $bgPortfolioEvnSect: darken($bgPageGray, 5%); // цвет фона четных разделов
 $bgPortfolioButtons: $bgPagePink;             // цвет фона кнопок 
+
 

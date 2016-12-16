@@ -14,7 +14,7 @@
 
 		.arm {
 			@extend .bg-img;
-			background: url("../img/arm/point-arm.png") right top no-repeat;
+			background: url($pathPointArm) right top no-repeat;
 			right: 0;
 			top: 0;;
 

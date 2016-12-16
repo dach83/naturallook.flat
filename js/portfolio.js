@@ -66,7 +66,7 @@ $(function(){
 	ResizeMagicwall ();
 
 	
-	// Запуск magicwall при наведении мышки
+	// Запуск magicwall при наведении мышки на раздел
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 	$('section').hoverDelay({
@@ -84,66 +84,6 @@ $(function(){
 
 	}); 
 
-
-
-
-	// Слайдер
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-	/*
-	$('.slider-for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.slider-nav'
-	});
-	*/
-
-	/*
-	$('.slider-thumb').slick({
-		//arrows: false,
-		slidesToShow: 7,
-		slidesToScroll: 0,
-		//asNavFor: '.slider-for',
-		dots: false,
-		centerMode: true,
-		//centerPadding: '5px',
-		focusOnSelect: true,
-		responsive: [
-    {
-      breakpoint: 650,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        slidesToShow: 3
-      }
-    }],
-	});
-	*/
-
-	// Щелкнули по кнопке галлерея
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-	/*
-	$('.popup-gallery').click (function (e){
-		e.preventDefault();
-		var mw = $(this).parent('div').find('.magicwall');
-		
-		mw.magnificPopup('open');
-	});
-	*/
-	
-	// Инициализация magnific-popup
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-	/*
-	$('.magicwall').magnificPopup({
-		delegate: 'a', 
-		type: 'image',
-		gallery: {
-   		enabled:true,
-   	}
-	});
-	*/
 
 
 }); // ready

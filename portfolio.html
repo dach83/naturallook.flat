@@ -415,24 +415,37 @@
 	</div>
 
 	<div class="modal gallery">
+		<div class="view-center"></div>
 
-		<!-- фотография работы -->
+		<!-- слайдер -->
 		<div class="slider">
 
 			<ul>
-				<li class="active">
+				<li data-slide-id="1" class="active">
 					<div class="slide">
 						<img src="img/portfolio/img01-after.jpg" alt="" class="after">
-					</div>	
-				</li>
 
-				<li>
-					<div class="slide">
-						<img src="img/magicwall/01.jpg" alt="" class="after">
+						<div class="curtain">
+							<img src="img/portfolio/img01-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
 					</div>
 				</li>
 
-				<li>
+				<li data-slide-id="2">
+					<div class="slide">
+						<img src="img/portfolio/img02-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img02-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="3">
 					<div class="slide">
 						<img src="img/portfolio/img03-after.jpg" alt="" class="after">
 
@@ -444,7 +457,7 @@
 					</div>
 				</li>
 
-				<li>
+				<li data-slide-id="4">
 					<div class="slide">
 						<img src="img/portfolio/img04-after.jpg" alt="" class="after">
 
@@ -456,7 +469,7 @@
 					</div>
 				</li>
 
-				<li>
+				<li data-slide-id="5">
 					<div class="slide">
 						<img src="img/portfolio/img05-after.jpg" alt="" class="after">
 
@@ -468,7 +481,7 @@
 					</div>
 				</li>
 
-				<li>
+				<li data-slide-id="6">
 					<div class="slide">
 						<img src="img/portfolio/img06-after.jpg" alt="" class="after">
 
@@ -482,48 +495,52 @@
 			</ul>
 
 			<!-- кнопки вперед/назад -->
-			<a href="" alt="Назад"  class="prev-slide" id="js-prev-slide"><span class="icon-prev"></span></a>
-			<a href="" alt="Вперед" class="next-slide" id="js-next-slide"><span class="icon-next"></span></a>
+			<span class="mbtn prev-slide icon-prev" id="js-prev-slide"></span>
+			<span class="mbtn next-slide icon-next" id="js-next-slide"></span>
 
 		</div>
 
 		<!-- миниатюры работ -->
-		<div class="thumb">
+		<div class="thumbs">
 			<ul>
-				<li><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
-				<li class="active"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+				<li data-slide-id="1" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="2"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="3"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="4"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="5"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="6"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
 
-				<li><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+				<!--
+				<li data-slide-id="7" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="8"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="9"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="10"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="11"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="12"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
 
-				<li><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
-				<li><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+
+				<li data-slide-id="13" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="14"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="15"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="16"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="17"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="18"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+
+				<li data-slide-id="19" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="20"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="21"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="22"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="23"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="24"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+				-->
+
 			</ul>
 		</div>
+		
+		<span class="slide-counter">1/6</span>	
+		<span class="mbtn close-modal icon-close"></span>
 	</div> <!-- .modal.gallery -->
 	
-	<!-- панель управления модальным окном -->
-	<div class="modal-toolbar">
-		<span class="counter">2/18</span>
-		<div class="modal-control">
-			<!--a href="" alt="Слайдшоу" title="Слайдшоу"><span class="icon-play"></span></a-->
-			<a href="" alt="Закрыть" title="Закрыть"><span class="icon-close"></span></a>
-		</div>
-	</div>	
-
-
 	<!-- Эти скрипты общие для всех страниц
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <!--[if lt IE 9]>

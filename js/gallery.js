@@ -6,11 +6,18 @@ $(function(){
 	var downHandleX = 0; 
 	    downMouseX  = 0;
 
+
 	// Заканчиваю движение шторки ДО-ПОСЛЕ
 	$(document).on("mouseup", function (){
 		$(".handle").removeClass ("drag-handle");
 		downHandleX = 0;
 		downMouseX  = 0;
+	});
+
+
+	// Запрещаем выделение элементов
+	$(document).on("mousedown", function (event){
+		event.preventDefault();
 	});
 
 
@@ -49,21 +56,95 @@ $(function(){
 
 
 
-	// Переключение слайдов
+	// Слайдер
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 	
-	function ShowThisSlide (slide){
-		$(".slider li").removeClass("active");
-		slide.addClass("active");
-		slide.find(".curtain").removeAttr('style');
-		slide.find(".handle").removeAttr('style');
+	// показ первого слайда
+	ShowSlideById ("0"); 
+
+
+	function MinThumbsLeft (){
+		var thumbs = $('.thumbs');
+
+		//var lastThumb  = thumbs.find("li").last();
+		//return (thumbs.outerWidth(true) - 1.1* lastThumb.outerWidth(true)) / 2 -  lastThumb.position().left;
+
+		return -10+thumbs.innerWidth()-thumbs.find("ul").outerWidth(true);
+	}
+
+
+	function MaxThumbsLeft (){
+		var thumbs = $('.thumbs');
 		
-		/*
-		setTimeout(function (){
-			slide.find(".curtain").fadeIn(1000);
-			slide.find(".handle").fadeIn(1000);
-		}, 500);
-		*/
+		//var firstThumb = thumbs.find("li").first();
+		//return (thumbs.outerWidth(true) - 1.1*firstThumb.outerWidth(true)) / 2 - firstThumb.position().left;
+
+		return 10;
+	}
+
+	// Сдвиг ленты миниатюр по горизонтали
+	function SetThumbsLeft (newLeft){
+		
+		var thumbs = $('.thumbs');
+		
+		// список короткий и весь влазит на экран
+		// не меняем его положение
+		if (thumbs.find("ul").outerWidth(true) < thumbs.innerWidth()) {
+			return;
+		}
+
+		var minLeft = MinThumbsLeft();
+		var maxLeft = MaxThumbsLeft();
+
+		if (newLeft < minLeft) {
+			newLeft = minLeft;
+		} else if (newLeft > maxLeft) {
+			newLeft = maxLeft;
+		}
+
+		thumbs.find("ul").stop(true).animate({left: newLeft}, 500);
+	};
+
+
+	// Показ слйда с заданным идентификатором
+	function ShowSlideById (slideId){
+		
+		var slider = $(".slider");
+		var thumbs = $(".thumbs");
+		var slideList = slider.find("li");
+		var thumbList = thumbs.find("li");
+
+		// выбор слайда
+		var slide = slider.find("li[data-slide-id="+ slideId + "]");
+		if (!slide.length) {
+			slide   = slideList.first();
+			slideId = slide.attr("data-slide-id");
+		}
+
+		if (!slide.hasClass("active")) {
+			slideList.removeClass("active");
+			slide.find(".curtain").removeAttr('style'); 
+			slide.find(".handle" ).removeAttr('style');
+			slide.addClass("active");
+		}	
+
+
+		// счетчик слайдов
+		var counterStr = slideList.index(slide) + 1 + "/" + 
+		                 slideList.length;
+		$(".slide-counter").text(counterStr);
+
+
+		// выбор миниатюры
+		var thumb = thumbs.find("li[data-slide-id="+ slideId + "]");
+		if (thumb.length){
+			thumbList.removeClass("active");
+			thumb.addClass("active");
+
+			var offset = (thumbs.outerWidth(true) - 1.1*thumb.outerWidth(true)) / 2 - thumb.position().left;
+			SetThumbsLeft (offset); // сдвиг ленты миниатюр
+		}
+
 	};
 
 
@@ -76,9 +157,7 @@ $(function(){
 			prev = $(".slider li").last();
 		}
 
-		//prev.find(".curtain").fadeOut(50);
-		//prev.find(".handle").fadeOut(50);
-		ShowThisSlide(prev);
+		ShowSlideById(prev.attr("data-slide-id"));
 	};
 
 
@@ -91,9 +170,7 @@ $(function(){
 			next = $(".slider li").first();
 		}
 
-		//next.find(".curtain").fadeOut(50);
-		//next.find(".handle").fadeOut(50);
-		ShowThisSlide (next);
+		ShowSlideById (next.attr("data-slide-id"));
 	};
 
 
@@ -105,8 +182,6 @@ $(function(){
 	// Кнопки влево/вправо
 	// показываем предыдущую/следующую работу
 	$(document).keydown(function(event) {
-		console.log("keydown");
-
 		if (event.keyCode == 37) { 
 			ShowPrevSlide (event);	
 		}
@@ -119,15 +194,56 @@ $(function(){
 	// Wheel на слайдере
 	// показываем предыдущую/следующую работу
 	$(".slider").mousewheel(function (event, delta) {
+		event.preventDefault();
 		if (delta < 0) {
 			ShowNextSlide (event);	
 		} else if (delta > 0) {
 			ShowPrevSlide (event);	
 		};
-
-		return false;
 	});
 
 
 
-});
+	// Wheel на миниатюрах
+	// прокручиваем ленту миниатюр
+	var currThumbLeft = 0;
+	$(".thumbs").mousewheel(function (event, delta) {
+		event.preventDefault();
+		if (delta < 0) {
+			currThumbLeft -= 100;
+		} else if (delta > 0) {
+			currThumbLeft += 100;	
+		};
+
+		var minLeft = MinThumbsLeft();
+		var maxLeft = MaxThumbsLeft();
+
+		if (currThumbLeft < minLeft) {
+			currThumbLeft = minLeft;
+		} else if (currThumbLeft > maxLeft) {
+			currThumbLeft = maxLeft;
+		}
+
+		SetThumbsLeft (currThumbLeft);
+	});
+
+
+
+	// Щелчек по миниатюре
+	$(".thumbs li").click(function (event){
+		event.preventDefault();
+
+		var slideId = $(this).attr("data-slide-id");
+		ShowSlideById (slideId);
+	});
+
+
+	// при изменении размеров окна
+	// надо заново спозиционировать элементы
+	$(window).resize(function(){
+		$(".thumbs ul").removeAttr("style");
+		var slideId = $(".slider li.active").attr("data-slide-id");
+		ShowSlideById (slideId);
+	});
+
+}); // ready

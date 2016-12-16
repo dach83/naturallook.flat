@@ -23,7 +23,7 @@
     // логотип студии - показываем только на главной
     .logo {
       @extend .bg-img;
-      background: url("../img/logo.svg") left center no-repeat;
+      background: url($pathLogo) left center no-repeat;
       left: 0;
 
       height: 100%;
@@ -35,7 +35,7 @@
     // и при ресайзе движется вместе с ним
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/lamp-arm.png") right center no-repeat;
+      background: url($pathLampArm) right center no-repeat;
       right: -5%;
 
       height: 100%;
@@ -48,7 +48,7 @@
     // Размеры и верхний отступ надо подбирать.
     .sleeve {
       @extend .bg-img;
-      background: url("../img/arm/lamp-sleeve.png") left center repeat-x;  
+      background: url($pathLampSleeve) left center repeat-x;  
       left: 105%;
       top: 237px;
       
@@ -64,7 +64,7 @@
 
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/studio-services-arm.png") left top no-repeat;
+      background: url($pathLipstickArm) left top no-repeat;
       left: -2%;
       top: 5%;
 
@@ -76,7 +76,7 @@
 
     .sleeve {
       @extend .bg-img;
-      background: url("../img/arm/studio-services-sleeve.png") left top repeat-y;
+      background: url($pathLipstickSleeve) left top repeat-y;
       top: 0;
       left: -2%;
 
@@ -114,7 +114,7 @@
 
     .arm {
       @extend .bg-img;
-      background: url("../img/arm/studio-prices-arm.png") right bottom no-repeat;
+      background: url($pathCoinArm) right bottom no-repeat;
       bottom: 5%;
       right: -2%;
 
@@ -125,7 +125,7 @@
 
     .sleeve {
       @extend .bg-img;
-      background: url("../img/arm/studio-prices-sleeve.png") right bottom repeat-y;
+      background: url($pathCoinSleeve) right bottom repeat-y;
       bottom: 0;
       right: -2%;
 

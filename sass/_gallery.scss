@@ -1,21 +1,39 @@
 /* GALLERY STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+$sliderHeight: 88vh;
+
 .gallery {
 
-  a {
-    text-decoration: none;
+  /*
+  .view-center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: rgba(green, .3);
+  }
+  */
+  
+  // счетчик слайдов
+  .slide-counter {
+    //font-family: arial;
+    position: absolute;
+    top: .3rem;
+    left: 1rem;
+    //right: 0;
+    //margin: auto;
 
-    &:hover {
-      color: white;
-    }
+    font-size: 1.5rem;
   }
 
-  // фотография
+  // главный слайдер
   .slider { 
     position: absolute;
     top: 0;
-    bottom: 0;
+    //bottom: 0;
+    height: $sliderHeight;
     left: 0;
     right: 0;
     margin: auto;
@@ -35,23 +53,21 @@
 
       opacity: 0;
       z-index: 1;
-      transition: opacity 500ms;
+      transition: opacity 500ms 300ms;
     }
 
     li.active {
       opacity: 1;
       z-index: 3;
-
+      transition: opacity 500ms;
     }
 
 
-    // предудущий - следующий слайд
+    // кнопки переключения предудущий/следующий слайд
     .prev-slide, .next-slide {
-      position: absolute;
       top: 50%;
-      transform: translateY(-55%); 
-
-      font-size: 2.5rem;
+      transform: translateY(-50%); 
+      font-size: 2.8rem;
     }
 
     .prev-slide {
@@ -63,16 +79,16 @@
     }
 
 
-    // ДО-ПОСЛЕ
+    // слайд
     .slide {
       display: inline-block;
       position: relative;
       margin: auto;
-      background-color: #FFF;
+      //background-color: #FFF;
       overflow: hidden;
       
       top: 50%;
-      transform: translateY(-55%);  
+      transform: translateY(-50%);  
       
       .curtain {
         position: absolute;
@@ -98,7 +114,7 @@
       }
 
       .handle {
-        background: url("../img/slider/handle.png") center no-repeat;
+        background: url($pathHandle) center no-repeat;
         background-size: 2rem;
         position: absolute;
         top: 50%;
@@ -113,9 +129,7 @@
         margin-top: -1.5rem;
         margin-left: -1.5rem;
         
-        //border: 1px solid rgba(black, .3);
         border-radius: 50%;   
-        //box-shadow: 0 0 3px rgba(black, .8);
         transition: box-shadow 200ms; 
 
         &:hover {
@@ -131,13 +145,13 @@
   }
 
   // список превьюшек
-  .thumb {
+  .thumbs {
     position: absolute;
     left: 0;
     //top: $pictureBottom;
     bottom: 0;
 
-    height: 12vh;
+    height: 100vh - $sliderHeight;
     width: 100%;
     
     max-height: 120px;
@@ -147,12 +161,14 @@
     z-index: 2;
 
     ul {
+      position: relative;
+      display: inline-block;
       height: 100%;
-      width: 100%;
-      margin: 0 .5vh;
+      //left: 0;
       padding: 0;
+      margin: auto;
       white-space: nowrap;
-      background-color: rgba(black, .3);
+      //background-color: rgba(yellow, .3);
     } 
 
     li {
@@ -160,7 +176,7 @@
       margin: 0 .5vh;
     }   
 
-    .active {
+    li.active {
       transform: scale(1.1);
       margin: 0 1vh;
       //padding: 0 10px;
@@ -168,14 +184,11 @@
 
     img {
       position: relative;
+      height: 80%;
       top: 50%;
       transform: translateY(-50%);  
-      height: 80%;
-
       cursor: pointer;
     }
-
   }
-
 }
 

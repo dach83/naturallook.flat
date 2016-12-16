@@ -195,6 +195,7 @@ li {
 }
 
 
+// темный полупрозрачный слой
 .overlay {
   width: 100%;
   height: 100%;
@@ -212,74 +213,43 @@ li {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: url("../img/presswall.png") repeat;
+    background: url($pathPresswall) repeat;
     background-size: 150px;
     background-position: -75px -75px;
-    //transform: rotate(-30deg);
-    //margin-top: -50%;
     opacity: 0.05;
   }
 
 }
 
+// общие свойства всех модальных окон
 .modal {
   box-sizing: border-box;
   padding: 0;
-
   width: 100%;
   height: 100%;
-  //padding: 20px;
-
-  //background: white;
   text-align: center;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  z-index: 1000;
-
-  //background-color: rgba($logoGreen, .3);
-  //display: none;
-}
-
-.modal-toolbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  
-  padding: 0 15px 0;
-  box-sizing: border-box;
-
-  //text-align: right;
   font-size: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   color: $clWhiteText;
-
-  z-index: 1001;
-  background-color: rgba(black, .2);
   
   //display: none;
   
-  a {
-    text-decoration: none; 
-    vertical-align: middle;
+  .mbtn {
+    position: absolute;
+    transition: color 300ms;
+    cursor: pointer;
   }
 
-  a:hover {
+  .mbtn:hover {
     color: white;
   }
-
-  .counter {
-    font-size: 1.3rem;
-    vertical-align: middle;
-  }
-
-  .modal-control {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    height: 100%;
+  
+  .close-modal {
+    top: .5rem;
+    right: 1rem;
   }
 }
 
@@ -418,7 +388,7 @@ footer {
   // руки с чашкой кофе
   .cofe.arm {
     @extend .bg-img;
-    background: url("../img/arm/cofe-arm.png") right bottom no-repeat;
+    background: url($pathCofeArm) right bottom no-repeat;
     bottom: 25%;
     right: -10%;
 
@@ -429,7 +399,7 @@ footer {
   // рукава для рук с кофе
   .cofe.sleeve {
     @extend .bg-img;
-    background: url("../img/arm/cofe-sleeve.png") left bottom repeat-x;
+    background: url($pathCofeSleeve) left bottom repeat-x;
     bottom: 143px;
     left: 110%;
     
@@ -439,7 +409,7 @@ footer {
 
   .cake.arm {
     @extend .bg-img;
-    background: url("../img/arm/cake-arm.png") left bottom no-repeat;
+    background: url($pathCakeArm) left bottom no-repeat;
     bottom: -10%;
     left: 0;
     
