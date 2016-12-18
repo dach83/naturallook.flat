@@ -136,7 +136,7 @@
   //background: $darkGreen;
 }
 
-.magicwall li a{
+.magicwall li .link {
   display: block;
   position: absolute;
   top: 0;
@@ -146,6 +146,3 @@
   z-index: 9;
 }
 
-.magicwall li a img{
-  display: none;
-}

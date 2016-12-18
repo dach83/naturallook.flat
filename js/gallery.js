@@ -59,8 +59,7 @@ $(function(){
 	// Слайдер
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 	
-	// показ первого слайда
-	ShowSlideById ("0"); 
+
 
 
 	function MinThumbsLeft (){
@@ -148,6 +147,14 @@ $(function(){
 	};
 
 
+	// Показ активного слайда
+	ShowActiveSlide ();
+	function ShowActiveSlide (){
+		var slideId = $(".slider li.active").attr("data-slide-id");
+		ShowSlideById (slideId);
+	}; 
+
+
 	// Показ предыдущего слайда
 	function ShowPrevSlide (event){
 		event.preventDefault();
@@ -193,13 +200,24 @@ $(function(){
 
 	// Wheel на слайдере
 	// показываем предыдущую/следующую работу
+	var inSliderWheel = false;
 	$(".slider").mousewheel(function (event, delta) {
 		event.preventDefault();
+		if (inSliderWheel) {
+			return;
+		}
+
+		inSliderWheel = true;
 		if (delta < 0) {
 			ShowNextSlide (event);	
 		} else if (delta > 0) {
 			ShowPrevSlide (event);	
 		};
+
+		setTimeout (function(){
+			inSliderWheel = false;
+		}, 100);
+
 	});
 
 
@@ -242,8 +260,21 @@ $(function(){
 	// надо заново спозиционировать элементы
 	$(window).resize(function(){
 		$(".thumbs ul").removeAttr("style");
-		var slideId = $(".slider li.active").attr("data-slide-id");
-		ShowSlideById (slideId);
+		ShowActiveSlide ();
+	});
+
+
+	// щелчек на кнопке закрыть
+	// если история не пустая, то возвращаемся назад
+	// если пустая, то переходим на страницу портфолио
+	$("#js-close-gallery").click(function(){
+
+		if (history.length == 1) {
+			window.location.href = "portfolio.html"; 
+		} else {
+			history.back();
+		}
+
 	});
 
 }); // ready

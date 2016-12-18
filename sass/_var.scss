@@ -34,6 +34,7 @@ $bgPagePink : #e27584;                        // розовый
 // цвет текста
 $clBlackText     : rgba(#425864, .7);         // темный цвет текста
 $clWhiteText     : rgba(white, .7);           // светлый цвет текста
+$clBlueText      : rgba($bgPageBlue, .7);     
 
 
 // цвета на главной странице
@@ -57,3 +58,13 @@ $bgPortfolioEvnSect: darken($bgPageGray, 5%); // цвет фона четных 
 $bgPortfolioButtons: $bgPagePink;             // цвет фона кнопок 
 
 
+// цвета на странице faq
+$clFaqHeader       : rgba($bgPageGreen, .8);   // цвет текста заголовка
+$bgFaqFooter       : $bgPageGreen;             // цвет фона шапки и футера
+$bgFaqOddSect      : $bgPageGray;              // цвет фона четных разделов
+$bgFaqEvnSect      : darken($bgPageGray, 5%);  // цвет фона четных разделов
+
+
+// цвета на странице контакты
+$clContactsHeader   : rgba($bgPageBlue, .8);   // цвет текста заголовка
+$bgContactsFooter   : $bgPageBlue;             // цвет фона шапки и футера

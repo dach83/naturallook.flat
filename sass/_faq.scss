@@ -1,0 +1,141 @@
+/* FAQ STYLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.page-faq {
+
+	header, footer {
+		background-color: $bgFaqFooter;
+	}
+
+	header {
+
+		// рука на широких экранах
+    // прижимается правым краем к правому краю wrappera
+    // и при ресайзе движется вместе с ним
+    .arm {
+      @extend .bg-img;
+      background: url($pathLampArm) right center no-repeat;
+      right: -5%;
+
+      height: 100%;
+      width: 500px;
+    }
+
+    // рукав на широких экранах 
+    // прижимается левым краем к правому краю wrappera
+    // и получается как бы продолжением руки.
+    // Размеры и верхний отступ надо подбирать.
+    .sleeve {
+      @extend .bg-img;
+      background: url($pathLampSleeve) left center repeat-x;  
+      left: 105%;
+      top: 237px;
+      
+      height: 68px;
+      width: 500%;
+    }
+
+	}
+
+	// содержание
+	.content {
+		background-color: $bgPageGray;
+
+		.text-wrapper {
+			margin: 0;
+			text-align: left;
+		}
+
+		h2, h3 {
+			color: $clFaqHeader;
+			//padding-top: 1rem;
+			//border-top: 2px dotted rgba($clBlackText, .3);
+		}
+	
+
+		h3 {
+			//color: $bgPagePink;
+			//padding-top: 1rem;
+			//border-top: 2px dotted rgba($clBlackText, .3);
+		}
+
+		p {
+			font-size: 1.1rem;
+		}		
+
+	}
+
+	article {
+		margin: 1rem 0;
+		padding: 0 2rem;
+		//border-left: 2px dashed $bgPageGreen;//rgba($bgPagePink, .3);
+		//border-bottom: 2px dashed rgba($clBlackText, .3);	
+	}
+
+	article:nth-child(odd) {
+		//border-left-color: $bgPageBlue;
+		//border-bottom: none;	
+	}
+
+
+	// навигация по разделам
+	.faq-nav {
+		float: right;
+		position: sticky;
+		top: 0;
+		max-width: 30%;
+		font-size: .9rem;
+		//background-color: rgba(gold, 0.1);
+
+		.faq-nav-root {
+			padding: 2rem 0;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+
+		// активные пункты раскрываю
+		li.active ul {
+			display: block;
+		}
+
+		// неактивные пункты сворачиваю
+		li ul {
+			display: none;
+		}
+
+		// ссылки верхнего уровня
+		a {
+			display: block;
+			text-decoration: none;
+			margin: 0;
+			padding: 0;
+			padding-left: 1rem;
+			border-left: 2px solid transparent;
+			color: $clBlackText;
+		}
+
+		// ссылки вложенных списков
+		li ul li a {
+			font-size: .8rem;
+			padding-left: 2rem;
+		}
+
+		// подсвечиваю активные ссылки
+		a:hover,
+		li.active > a {
+			color: $clFaqHeader;
+			border-left-color: $clFaqHeader;
+		}
+
+	}
+		
+} // .page-portfolio
+

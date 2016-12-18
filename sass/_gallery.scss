@@ -3,7 +3,7 @@
 
 $sliderHeight: 88vh;
 
-.gallery {
+.page-gallery {
 
   /*
   .view-center {
@@ -15,6 +15,10 @@ $sliderHeight: 88vh;
     background-color: rgba(green, .3);
   }
   */
+
+  .overlay, .modal {
+    display: block;
+  }
   
   // счетчик слайдов
   .slide-counter {
@@ -174,11 +178,12 @@ $sliderHeight: 88vh;
     li {
       height: 100%;
       margin: 0 .5vh;
+      transition: transform 200ms;
     }   
 
     li.active {
       transform: scale(1.1);
-      margin: 0 1vh;
+      //margin: 0 1vh;
       //padding: 0 10px;
     }
 

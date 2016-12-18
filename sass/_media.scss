@@ -9,7 +9,7 @@
     font-size: 14px;
   }
 
-  .page-studio {
+  .page-studio, .page-faq {
     
     .head-row {
       .arm {
@@ -77,7 +77,8 @@
   }
 
   // делаем текст на ширину основного контейнера
-  .center-text-wrapper {
+  .center-text-wrapper,
+  .text-wrapper {
     margin-left: 5%;
     width: 90%;
   }

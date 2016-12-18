@@ -1,0 +1,74 @@
+/* CONTACTS STYLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.page-contacts {
+
+	header, footer {
+		background-color: $bgContactsFooter;
+	}
+
+  // заголовок
+	header {
+
+		// рука на широких экранах
+    // прижимается правым краем к правому краю wrappera
+    // и при ресайзе движется вместе с ним
+    .arm {
+      @extend .bg-img;
+      background: url($pathLampArm) right center no-repeat;
+      right: -5%;
+
+      height: 100%;
+      width: 500px;
+    }
+
+    // рукав на широких экранах 
+    // прижимается левым краем к правому краю wrappera
+    // и получается как бы продолжением руки.
+    // Размеры и верхний отступ надо подбирать.
+    .sleeve {
+      @extend .bg-img;
+      background: url($pathLampSleeve) left center repeat-x;  
+      left: 105%;
+      top: 237px;
+      
+      height: 68px;
+      width: 500%;
+    }
+
+	}
+
+  // содержание
+  .content {
+
+    h2 { 
+      color: $clContactsHeader;
+    }
+
+    a {
+      text-decoration: none;
+      color: $clBlueText;
+    }
+
+    a:hover {
+      color: $clBlackText;
+    }
+
+    p {
+      padding: 1rem;
+    }
+
+  }
+
+
+  .photos {
+
+    img {
+      //display: inline-block;
+      float: left;
+      //padding: 1rem;
+      width: 33.33333%;
+    }
+  }
+
+} // .page-contacts

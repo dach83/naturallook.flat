@@ -82,7 +82,7 @@ body {
   position: relative;
   background-color: white;
   overflow-x: hidden;
-  &.show-modal {
+  &.opened-modal {
     overflow: hidden;
   }
 }
@@ -103,6 +103,10 @@ h1 {
 
 h2 {
  font-size: 1.9rem; 
+}
+
+h3 {
+  font-size: 1.6rem;
 }
 
 p {
@@ -144,11 +148,15 @@ li {
 }
 
 .desktop {
-  disply: block;
+  display: block;
 }
 
 .tablet {
   display: none;
+}
+
+.clear-fix {
+  clear: both;
 }
 
 .white-text {
@@ -177,12 +185,12 @@ li {
 
 // вспомогательный контейнер
 // выравнивает содержимое по центру 
-.center-text-wrapper {
+.text-wrapper {
     display: block;
     margin: 0 auto;
     width: 60%;
     text-align: center;
-    padding: 2rem 0 2rem;
+    padding: 2rem 0;
 }
 
 
@@ -207,7 +215,7 @@ li {
   left: 0;
   z-index: 999;
 
-  //display: none;
+  display: none;
 
   .presswall {
     position: absolute;
@@ -225,6 +233,7 @@ li {
 .modal {
   box-sizing: border-box;
   padding: 0;
+  //padding-left: 18px;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -235,7 +244,7 @@ li {
   z-index: 1000;
   color: $clWhiteText;
   
-  //display: none;
+  display: none;
   
   .mbtn {
     position: absolute;
@@ -250,9 +259,18 @@ li {
   .close-modal {
     top: .5rem;
     right: 1rem;
+    z-index: 10;
   }
 }
 
+.modal-map {
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
 
 .btn {
   color: $clWhiteText;
@@ -269,18 +287,19 @@ li {
   border-radius: 5px;
   margin: 2rem 0 2rem;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, .8);
-  transition: box-shadow 300ms;
+  transition: all 300ms;
 
   &:hover {
     color: $clWhiteText;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, .5);
+    //transform: scale(1.03);
     //margin-top: 5px;
   }
 
   &:active {
     color: $clWhiteText;
     box-shadow: -1px 1px 2px rgba(0, 0, 0, .8);    
-    transition: box-shadow 100ms;
+    transition: all 100ms;
   }
 }
 
@@ -304,6 +323,59 @@ li {
 }
 
 
+.social {
+  font-size: 2.5rem;
+  margin: 0;
+
+  a {
+    color: $clBlackText;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $clWhiteText;
+  }
+
+}
+
+@keyframes lookOutside {
+  from {
+    transform: translateX(-85%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-85%);
+  }
+}
+
+.goto-top {
+  position: fixed;
+  left: 0;
+  top: 85%;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  color: $clWhiteText;
+  background-color: $clBlackText;
+  opacity: 0;
+  transition: all 500ms;
+  z-index: 5;
+  transform: translateX(-85%);
+
+  &.visible {
+    opacity: .7;
+    animation: lookOutside  2s ease-in-out;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 // СТИЛИ ЗАГОЛОВКА
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -356,6 +428,7 @@ li {
 
 footer {
   overflow: hidden;
+  clear: both;
 
   a {
     text-decoration: none;
@@ -369,20 +442,6 @@ footer {
     //color: $whiteText;
     padding-top: 0.5em;
     margin: 0;
-  }
-
-  .social {
-    font-size: 2.5em;
-    margin: 0;
-    
-    a {
-      color: $clBlackText;
-    }
-
-    a:hover {
-      color: $clWhiteText;
-    }
-
   }
 
   // руки с чашкой кофе

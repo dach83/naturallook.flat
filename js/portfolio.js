@@ -12,8 +12,10 @@ $(function(){
 			var availHeight = $this.parent().height() * 0.9;
 
 			var colsCount = 2;
+			var animation   = 'slideColumn,slideRow,-slideColumn,-slideRow';
 			if (availWidth < 200) {
 				colsCount = 1;
+				animation = 'slideColumn,slideRow,-slideRow';
 			}
 				
 
@@ -31,8 +33,9 @@ $(function(){
 				           '  colsCount=' + colsCount);
 			*/
 
-			$this.magicWall('option', 'rowsCount', rowsCount);
+			$this.magicWall('option', 'rowsCount',    rowsCount);
 			$this.magicWall('option', 'columnsCount', colsCount);
+			$this.magicWall('option', 'animations',   animation);
 			$this.innerHeight (rowsCount*imgHeight);			
 
 			$this.magicWall('update');
@@ -55,7 +58,7 @@ $(function(){
 		paused: 'true',
 		loadingMode: 'chain',
 		preloadBeforeSwitch: 'true',
-		pauseOnHover: 'all',
+		pauseOnHover: 'item',
 		//delay: '500',
 		//duration: '800',
 		thumbSizing: '95%',

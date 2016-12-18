@@ -37,4 +37,16 @@ $(function(){
 	});
 
 
+	// Плавный скролл к секции с ценами
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	$("#js-scrollTo-prices").click (function(event){
+		event.preventDefault();
+		var offset = $("#js-prices").offset().top;
+		$("html, body").animate ({
+			scrollTop: offset
+		}, 800);
+
+	});
+
+
 });

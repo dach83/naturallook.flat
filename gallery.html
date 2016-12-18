@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Портфолио студии Естественный Образ</title>
+	<meta name="description" content=""/>
+	<meta name="keywords" content="" />
+
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<link rel="icon" href="img/favicon/favicon.svg" sizes="any" type="image/svg+xml" />
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" sizes="16x16" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="img/favicon/favicon57.png" />
+	<link rel="apple-touch-icon" sizes="32x32" href="img/favicon/favicon32.png" />
+	<link rel="apple-touch-icon" sizes="64x64" href="img/favicon/favicon64.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/favicon114.png" />
+
+
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="page-gallery opened-modal">
+
+	<!-- Модальные окна
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="overlay">
+		<i class="presswall"></i>
+	</div>
+
+	<div class="modal gallery">
+		<div class="view-center"></div>
+
+		<!-- слайдер -->
+		<div class="slider">
+
+			<ul>
+				<li data-slide-id="1">
+					<div class="slide">
+						<img src="img/portfolio/img01-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img01-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="2">
+					<div class="slide">
+						<img src="img/portfolio/img02-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img02-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="3">
+					<div class="slide">
+						<img src="img/portfolio/img03-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img03-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="4">
+					<div class="slide">
+						<img src="img/portfolio/img04-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img04-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="5" class="active">
+					<div class="slide">
+						<img src="img/portfolio/img05-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img05-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+
+				<li data-slide-id="6">
+					<div class="slide">
+						<img src="img/portfolio/img06-after.jpg" alt="" class="after">
+
+						<div class="curtain">
+							<img src="img/portfolio/img06-before.jpg" alt="" class="before">
+						</div>
+
+						<a class="handle"></a>
+					</div>
+				</li>
+			</ul>
+
+			<!-- кнопки вперед/назад -->
+			<span class="mbtn prev-slide icon-prev" id="js-prev-slide"></span>
+			<span class="mbtn next-slide icon-next" id="js-next-slide"></span>
+
+		</div>
+
+		<!-- миниатюры работ -->
+		<div class="thumbs">
+			<ul>
+				<li data-slide-id="1" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="2"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="3"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="4"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="5"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="6"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+
+				<!--
+				<li data-slide-id="7" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="8"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="9"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="10"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="11"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="12"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+
+
+				<li data-slide-id="13" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="14"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="15"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="16"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="17"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="18"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+
+				<li data-slide-id="19" class="active"><img src="img/portfolio/img01-thumb.jpg" alt=""></li>
+				<li data-slide-id="20"><img src="img/portfolio/img02-thumb.jpg" alt=""></li>
+				<li data-slide-id="21"><img src="img/portfolio/img03-thumb.jpg" alt=""></li>
+				<li data-slide-id="22"><img src="img/portfolio/img04-thumb.jpg" alt=""></li>
+				<li data-slide-id="23"><img src="img/portfolio/img05-thumb.jpg" alt=""></li>
+				<li data-slide-id="24"><img src="img/portfolio/img06-thumb.jpg" alt=""></li>
+				-->
+
+			</ul>
+		</div>
+		
+		<span class="slide-counter">1/6</span>	
+		<span class="mbtn close-modal icon-close" id="js-close-gallery"></span>
+	</div> <!-- .modal.gallery -->
+	
+	<!-- Эти скрипты общие для всех страниц
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+	<script src="libs/jquery/jquery.1.9.1.min.js"></script>
+	<script src="libs/modernizr/modernizr.js"></script>
+	<script src="js/common.min.js"></script>
+	<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+	<!-- Google Analytics counter --><!-- /Google Analytics counter -->	
+
+
+	<!-- Эти скрипты отличаются на разных страницах 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script src="libs/magicwall/jquery.easing.min.js"></script>
+	<script src="libs/magicwall/jquery.magicwall.min.js"></script>
+	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+	<script src="libs/hoverDelay-master/jquery.hoverDelay.min.js"></script>
+
+	<script src="js/gallery.min.js"></script>
+
+</body>
+
+</html>
