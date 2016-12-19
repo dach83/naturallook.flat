@@ -11,7 +11,7 @@
 
   .page-studio, .page-faq {
     
-    .head-row {
+    .head-banner {
       .arm {
         left: 350px; // не налазим на логотип
       }
@@ -42,10 +42,10 @@
   }
 
   // прячем картинки руки и рукава в заголовке
-  .head-row {
+  .head-banner {
     min-height: 200px;
 
-    .head-text {
+    .head-title {
       max-width: 100%;
       width: 100%;
       text-align: center; 
