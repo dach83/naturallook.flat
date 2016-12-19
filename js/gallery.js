@@ -106,8 +106,14 @@ $(function(){
 
 
 	// Показ слйда с заданным идентификатором
+	var changeSlideTimeout = false;
 	function ShowSlideById (slideId){
 		
+		// еще не полносью мсменился предыдущий слайд
+		if (changeSlideTimeout){
+			return;
+		}
+
 		var slider = $(".slider");
 		var thumbs = $(".thumbs");
 		var slideList = slider.find("li");
@@ -143,6 +149,12 @@ $(function(){
 			var offset = (thumbs.outerWidth(true) - 1.1*thumb.outerWidth(true)) / 2 - thumb.position().left;
 			SetThumbsLeft (offset); // сдвиг ленты миниатюр
 		}
+
+		// сделаем задержку перед включением следующего слайда
+		changeSlideTimeout = true;
+		setTimeout (function(){
+			changeSlideTimeout = false;
+		}, 100);
 
 	};
 
@@ -200,26 +212,19 @@ $(function(){
 
 	// Wheel на слайдере
 	// показываем предыдущую/следующую работу
-	var inSliderWheel = false;
-	$(".slider").mousewheel(function (event, delta) {
+	function WheelOnSlider (event, delta){
 		event.preventDefault();
-		if (inSliderWheel) {
-			return;
-		}
-
-		inSliderWheel = true;
 		if (delta < 0) {
 			ShowNextSlide (event);	
 		} else if (delta > 0) {
 			ShowPrevSlide (event);	
 		};
+	}
 
-		setTimeout (function(){
-			inSliderWheel = false;
-		}, 100);
 
-	});
-
+	// Wheel на слайдере
+	// показываем предыдущую/следующую работу
+	$(".slider").mousewheel(WheelOnSlider);
 
 
 	// Wheel на миниатюрах
@@ -227,21 +232,39 @@ $(function(){
 	var currThumbLeft = 0;
 	$(".thumbs").mousewheel(function (event, delta) {
 		event.preventDefault();
+
+		// список короткий и весь влазит на экран
+		// просто листаем слайды, не меняя положение списка
+		var thumbs = $(this);
+		if (thumbs.find("ul").outerWidth(true) < thumbs.innerWidth()) {
+			WheelOnSlider(event, delta);
+			return;
+		}
+
+		// запомним текущее положение
+		var prevThumbLeft = currThumbLeft;
 		if (delta < 0) {
 			currThumbLeft -= 100;
 		} else if (delta > 0) {
 			currThumbLeft += 100;	
 		};
 
+		// ограничиваем перемещение блока миниатюр
 		var minLeft = MinThumbsLeft();
 		var maxLeft = MaxThumbsLeft();
-
-		if (currThumbLeft < minLeft) {
+		if (currThumbLeft <= minLeft) {
 			currThumbLeft = minLeft;
-		} else if (currThumbLeft > maxLeft) {
+		} else if (currThumbLeft >= maxLeft) {
 			currThumbLeft = maxLeft;
 		}
 
+		// если положение не изменилось,
+		// то ничего не делаем
+		if (prevThumbLeft == currThumbLeft){
+			return;
+		}
+
+		// смещаем миниатюры
 		SetThumbsLeft (currThumbLeft);
 	});
 

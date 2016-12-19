@@ -97,8 +97,7 @@ p {
 a, button {
   outline: 0 !important;
   color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: color .3s;
-          transition: color .3s; }
+  transition: color .3s; }
 
 a:hover,
 a:active {
@@ -152,9 +151,7 @@ li {
 .vcenter {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  transform: translateY(-50%); }
 
 .overlay {
   width: 100%;
@@ -189,8 +186,7 @@ li {
   display: none; }
   .modal .mbtn {
     position: absolute;
-    -webkit-transition: color 300ms;
-            transition: color 300ms;
+    transition: color 300ms;
     cursor: pointer; }
   .modal .mbtn:hover {
     color: white; }
@@ -222,16 +218,14 @@ li {
   border-radius: 5px;
   margin: 2rem 0 2rem;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-  -webkit-transition: all 300ms;
-          transition: all 300ms; }
+  transition: all 300ms; }
   .btn:hover {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5); }
   .btn:active {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.8);
-    -webkit-transition: all 100ms;
-            transition: all 100ms; }
+    transition: all 100ms; }
 
 .bg-img, footer .cofe.arm, footer .cofe.sleeve, footer .cake.arm, .page-studio header .logo, .page-studio header .arm, .page-studio header .sleeve, .page-studio .services .arm, .page-studio .services .sleeve, .page-studio .prices .arm, .page-studio .prices .sleeve, .page-portfolio header .arm, .page-faq header .arm, .page-faq header .sleeve, .page-contacts header .arm, .page-contacts header .sleeve {
   display: block;
@@ -256,33 +250,15 @@ li {
   .social a:hover {
     color: rgba(255, 255, 255, 0.7); }
 
-@-webkit-keyframes lookOutside {
-  from {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%); }
-  50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
-  70% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
-  to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%); } }
-
 @keyframes lookOutside {
   from {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%); }
+    transform: translateX(-85%); }
   50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
   70% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
   to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%); } }
+    transform: translateX(-85%); } }
 .goto-top {
   position: fixed;
   left: 0;
@@ -292,21 +268,15 @@ li {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(66, 88, 100, 0.7);
   opacity: 0;
-  -webkit-transition: all 500ms;
-          transition: all 500ms;
+  transition: all 500ms;
   z-index: 5;
-  -webkit-transform: translateX(-85%);
-      -ms-transform: translateX(-85%);
-          transform: translateX(-85%); }
+  transform: translateX(-85%); }
   .goto-top.visible {
     opacity: .7;
-    -webkit-animation: lookOutside  2s ease-in-out;
-            animation: lookOutside  2s ease-in-out; }
+    animation: lookOutside  2s ease-in-out; }
   .goto-top:hover {
     opacity: 1;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
 
 .head-row {
   min-height: 420px; }
@@ -315,9 +285,7 @@ li {
     top: 50%;
     left: 0;
     max-width: 330px;
-    -webkit-transform: translate(0, -50%);
-        -ms-transform: translate(0, -50%);
-            transform: translate(0, -50%); }
+    transform: translate(0, -50%); }
   .head-row h1 {
     color: white;
     margin: 0;
@@ -388,6 +356,9 @@ footer {
   margin-top: -30px;
   margin-left: -30px;
   background: url("../img/other/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -437,6 +408,9 @@ footer {
   margin-top: -20px;
   margin-left: -20px;
   background: url("../img/other/loading.gif") center center no-repeat rgba(200, 200, 200, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%; }
 
@@ -454,8 +428,7 @@ footer {
   opacity: 0;
   text-align: center;
   color: #fff;
-  -webkit-transition: opacity 150ms ease-out;
-          transition: opacity 150ms ease-out; }
+  transition: opacity 150ms ease-out; }
 
 .magicwall li:hover .hover-content {
   opacity: 1; }
@@ -465,9 +438,7 @@ footer {
   top: 50%;
   left: 10%;
   width: 80%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 1rem;
   margin: 0;
   padding: 0.3rem 0; }
@@ -636,18 +607,14 @@ footer {
       margin: auto;
       opacity: 0;
       z-index: 1;
-      -webkit-transition: opacity 500ms 300ms;
-              transition: opacity 500ms 300ms; }
+      transition: opacity 500ms 300ms; }
     .page-gallery .slider li.active {
       opacity: 1;
       z-index: 3;
-      -webkit-transition: opacity 500ms;
-              transition: opacity 500ms; }
+      transition: opacity 500ms; }
     .page-gallery .slider .prev-slide, .page-gallery .slider .next-slide {
       top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
+      transform: translateY(-50%);
       font-size: 2.8rem; }
     .page-gallery .slider .prev-slide {
       left: -2.5rem; }
@@ -659,9 +626,7 @@ footer {
       margin: auto;
       overflow: hidden;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%); }
+      transform: translateY(-50%); }
       .page-gallery .slider .slide .curtain {
         position: absolute;
         margin: auto;
@@ -692,8 +657,7 @@ footer {
         margin-top: -1.5rem;
         margin-left: -1.5rem;
         border-radius: 50%;
-        -webkit-transition: box-shadow 200ms;
-                transition: box-shadow 200ms; }
+        transition: box-shadow 200ms; }
         .page-gallery .slider .slide .handle:hover {
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5); }
         .page-gallery .slider .slide .handle, .page-gallery .slider .slide .handle.drag-handle {
@@ -717,19 +681,14 @@ footer {
     .page-gallery .thumbs li {
       height: 100%;
       margin: 0 .5vh;
-      -webkit-transition: -webkit-transform 200ms;
-              transition: transform 200ms; }
+      transition: transform 200ms; }
     .page-gallery .thumbs li.active {
-      -webkit-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-              transform: scale(1.1); }
+      transform: scale(1.1); }
     .page-gallery .thumbs img {
       position: relative;
       height: 80%;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
+      transform: translateY(-50%);
       cursor: pointer; }
 
 /* FAQ STYLES
@@ -761,7 +720,6 @@ footer {
   padding: 0 2rem; }
 .page-faq .faq-nav {
   float: right;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   max-width: 30%;
@@ -797,31 +755,37 @@ footer {
 
 /* CONTACTS STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.page-contacts header, .page-contacts footer {
-  background-color: #7ab1d6; }
-.page-contacts header .arm {
-  background: url("../img/arm/lamp-arm.png") right center no-repeat;
-  right: -5%;
-  height: 100%;
-  width: 500px; }
-.page-contacts header .sleeve {
-  background: url("../img/arm/lamp-sleeve.png") left center repeat-x;
-  left: 105%;
-  top: 237px;
-  height: 68px;
-  width: 500%; }
-.page-contacts .content h2 {
-  color: rgba(122, 177, 214, 0.8); }
-.page-contacts .content a {
-  text-decoration: none;
-  color: rgba(122, 177, 214, 0.7); }
-.page-contacts .content a:hover {
-  color: rgba(66, 88, 100, 0.7); }
-.page-contacts .content p {
-  padding: 1rem; }
-.page-contacts .photos img {
-  float: left;
-  width: 33.33333%; }
+.page-contacts {
+  background-color: whitesmoke; }
+  .page-contacts header, .page-contacts footer {
+    background-color: #7ab1d6; }
+  .page-contacts header .arm {
+    background: url("../img/arm/lamp-arm.png") right center no-repeat;
+    right: -5%;
+    height: 100%;
+    width: 500px; }
+  .page-contacts header .sleeve {
+    background: url("../img/arm/lamp-sleeve.png") left center repeat-x;
+    left: 105%;
+    top: 237px;
+    height: 68px;
+    width: 500%; }
+  .page-contacts .content h2 {
+    color: rgba(122, 177, 214, 0.8); }
+  .page-contacts .content a {
+    text-decoration: none;
+    color: rgba(122, 177, 214, 0.8); }
+  .page-contacts .content a:hover {
+    color: rgba(66, 88, 100, 0.7); }
+  .page-contacts .content p {
+    padding: 1rem; }
+  .page-contacts .studio-photo {
+    padding: 0 1.5rem; }
+    .page-contacts .studio-photo img {
+      box-sizing: border-box;
+      float: left;
+      padding: 1.5rem .5rem;
+      width: 33.33333%; }
 
 /* MEDIA STYLES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
