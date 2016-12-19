@@ -10,17 +10,7 @@
 // ИКОНКИ ICOMOON
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-@font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon/icomoon.eot?y52zys');
-  src:  url('../fonts/icomoon/icomoon.eot?y52zys#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon/icomoon.ttf?y52zys') format('truetype'),
-    url('../fonts/icomoon/icomoon.woff?y52zys') format('woff'),
-    url('../fonts/icomoon/icomoon.svg?y52zys#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
+@include font-face ("icomoon", "../fonts/IcoMoon/icomoon", 500);
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
