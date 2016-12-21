@@ -23,7 +23,8 @@ $(function(){
 		rowsCount: '5',
 		//paused: 'true',
 		//loadingMode: 'chain',
-		//preloadBeforeSwitch: 'true',
+		preloadBeforeSwitch: 'true',
+		thumbSizing: '95%',
 		fixedClass: 'fixed'
 	});
 
@@ -32,7 +33,8 @@ $(function(){
 		rowsCount: '3',
 		//paused: 'true',
 		//loadingMode: 'chain',
-		//preloadBeforeSwitch: 'true',
+		preloadBeforeSwitch: 'true',
+		thumbSizing: '95%',
 		fixedClass: 'fixed'
 	});
 

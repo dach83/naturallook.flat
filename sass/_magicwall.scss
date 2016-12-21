@@ -106,9 +106,11 @@
 
 .magicwall li .hover-content {
   position: absolute;
+  top: 2.5%;
+  left: 2.5%;
 
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
 
   z-index: 1;
   opacity: 0;
