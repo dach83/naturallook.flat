@@ -2,8 +2,12 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .page-portfolio {
 
-	header, footer {
+	header, footer, .btn {
 		background-color: $bgPortfolioFooter;
+	}
+
+	h2 {
+		color: $clPortfolioHeader;
 	}
 
 	.btn {
@@ -26,10 +30,6 @@
 
 	section {
 		//overflow: hidden;
-
-		h2 {
-			color: $clPortfolioHeader;
-		}
 
 		// четные разделы
 		// ------------------------------
@@ -58,7 +58,7 @@
 
 		// нечетные разделы
 		// ------------------------------
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			background-color: $bgPortfolioEvnSect;
 
 			.portfolio-text-wrapper {

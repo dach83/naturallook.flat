@@ -6,17 +6,20 @@ $pathHandle        : "../img/other/handle.png";
 $pathLoading       : "../img/other/loading.gif";
 
 // руки
+$pathTatuazhArm    : "../img/arm/tatuazh-arm.png";
+$pathTatuazhSleeve : "../img/arm/tatuazh-sleeve.png";
 $pathLampArm       : "../img/arm/lamp-arm.png";
 $pathLampSleeve    : "../img/arm/lamp-sleeve.png";
-$pathLipstickArm   : "../img/arm/studio-services-arm.png";
-$pathLipstickSleeve: "../img/arm/studio-services-sleeve.png";
-$pathCoinArm       : "../img/arm/studio-prices-arm.png";
-$pathCoinSleeve    : "../img/arm/studio-prices-sleeve.png";
+$pathLipstickArm   : "../img/arm/lipstick-arm.png";
+$pathLipstickSleeve: "../img/arm/lipstick-sleeve.png";
+$pathCoinArm       : "../img/arm/coin-arm.png";
+$pathCoinSleeve    : "../img/arm/coin-sleeve.png";
 $pathCofeArm       : "../img/arm/cofe-arm.png";
 $pathCofeSleeve    : "../img/arm/cofe-sleeve.png";
 $pathCakeArm       : "../img/arm/cake-arm.png";
 $pathPointArm      : "../img/arm/point-arm.png";
-
+$pathPhoneArm      : "../img/arm/phone-arm.png";
+$pathPhoneSleeve   : "../img/arm/phone-sleeve.png";
 
 
 // цвета логотипа
@@ -30,6 +33,8 @@ $bgPageBlue : #7ab1d6;                        // голубой
 $bgPageGreen: #258282;                        // темно-зеленый
 $bgPagePink : #e27584;                        // розовый
 
+// цвет 
+$bgModalForm: $bgPageGray;
 
 // цвет текста
 $clBlackText     : rgba(#425864, .7);         // темный цвет текста

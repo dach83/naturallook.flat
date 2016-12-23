@@ -8,7 +8,7 @@
     color: rgba($clStudioHeader, .8);
   }
 
-  nav, footer {
+  nav, footer, .btn {
     background-color: $bgStudioFooter;
   }
 
@@ -35,11 +35,11 @@
     // и при ресайзе движется вместе с ним
     .arm {
       @extend .bg-img;
-      background: url($pathLampArm) right center no-repeat;
-      right: -5%;
+      background: url($pathTatuazhArm) right center no-repeat;
+      right: 0;
 
       height: 100%;
-      width: 500px;
+      width: 350px;
     }
 
     // рукав на широких экранах 
@@ -48,11 +48,11 @@
     // Размеры и верхний отступ надо подбирать.
     .sleeve {
       @extend .bg-img;
-      background: url($pathLampSleeve) left center repeat-x;  
-      left: 105%;
-      top: 237px;
+      background: url($pathTatuazhSleeve) left top repeat-x;  
+      left: 100%;
+      top: 98px;
       
-      height: 68px;
+      height: 225px;
       width: 500%;
     }
   } // .header
@@ -129,7 +129,7 @@
       bottom: 0;
       right: -2%;
 
-      height: 6%;
+      height: 5%;
       width: 20%;
       max-width: 150px; 
     }

@@ -65,7 +65,7 @@
 	<!-- Содержание
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-	<div class="content" role="main">
+	<box23 class="content" role="main">
 		<section>
 			<div class="wrapper">
 				<div class="text-wrapper">
@@ -110,7 +110,7 @@
 			<img src="img/studio/studio2.jpg" alt="">
 		</section>
 
-	</div>
+	</box23>
 
 
 
@@ -127,7 +127,7 @@
 				</p>
 
 				<p class="adress white-text">
-					<a href="" alt="Телефон студии" title="Хочу, чтобы мне перезвонили">8 912 225-27-05</a><br>
+					<a href="#modal-callback" class="show-modal" alt="Телефон студии" title="Хочу, чтобы мне перезвонили">8 912 225-27-05</a><br>
 					<a href="mailto:naturallook@mail.ru" alt="Email студии" title="Оставить сообщение">naturallook@mail.ru</a><br>
 					<a href="#js-modal-map" alt="Адрес студии" title="Смотреть карту" class="show-modal">г. Екатеринбург, Чкалова&nbsp;231</a>
 				</p>
@@ -155,6 +155,33 @@
 			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=YAwb8wW2oTcnUGQc6x33AS_EZtDVq0r5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 		</div>
 		<span class="close-modal mbtn icon-close"></span>
+	</div>
+
+	<!-- Обратный звонок -->
+	<div class="modal" id="modal-callback">
+		
+		<div class="modal-form vcenter">
+	
+			<h2>Обратная связь</h2>
+			<p>Оставьте Ваши данные и мы свяжемся с Вами</p>
+
+			<form action="" method="post">
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Ваше имя">
+				</div>
+				
+				<div class="form-group">
+					<input type="text" name="phone" placeholder="Контактный телефон или email">
+				</div>
+				
+				<button type="submit" class="submit btn" name="submit">Отправить</button>
+			</form>
+		
+			<span class="close-modal mbtn icon-close"></span>
+
+		</div>
+
+		
 	</div>
 
 	<!-- Кнопка наверх

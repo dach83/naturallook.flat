@@ -4,9 +4,13 @@
 .page-contacts {
   background-color: $bgPageGray;
 
-	header, footer {
-		background-color: $bgContactsFooter;
+	header, footer, .btn {
+    background-color: $bgContactsFooter;
 	}
+
+  h2 { 
+    color: $clContactsHeader;
+  }
 
   // заголовок
 	header {
@@ -16,7 +20,7 @@
     // и при ресайзе движется вместе с ним
     .arm {
       @extend .bg-img;
-      background: url($pathLampArm) right center no-repeat;
+      background: url($pathPhoneArm) right center no-repeat;
       right: -5%;
 
       height: 100%;
@@ -29,11 +33,11 @@
     // Размеры и верхний отступ надо подбирать.
     .sleeve {
       @extend .bg-img;
-      background: url($pathLampSleeve) left center repeat-x;  
+      background: url($pathPhoneSleeve) left center repeat-x;  
       left: 105%;
-      top: 237px;
+      top: 137px;
       
-      height: 68px;
+      height: 146px;
       width: 500%;
     }
 
@@ -41,11 +45,6 @@
 
   // содержание
   .content {
-
-    h2 { 
-      color: $clContactsHeader;
-    }
-
     a {
       text-decoration: none;
       color: $clContactsHeader;

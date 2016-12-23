@@ -9,7 +9,11 @@
     font-size: 14px;
   }
 
-  .page-studio, .page-faq {
+}
+
+
+@media only screen and (max-width : 787px ) {
+  .page-studio {
     
     .head-banner {
       .arm {
@@ -17,7 +21,7 @@
       }
 
       .sleeve {
-        left: 850px; // равно arm left + width
+        left: 700px; // равно arm left + width
       }
     }
 
@@ -25,6 +29,41 @@
 
 }
 
+
+@media only screen and (max-width : 850px ) {
+  .page-faq {
+    
+    .head-banner {
+      .arm {
+        left: 303px; 
+      }
+
+      .sleeve {
+        left: 803px; // равно arm left + width
+      }
+    }
+
+  } // .page-studio
+
+}
+
+
+@media only screen and (max-width : 800px ) {
+  .page-contacts {
+    
+    .head-banner {
+      .arm {
+        left: 256px; 
+      }
+
+      .sleeve {
+        left: 756px; // равно arm left + width
+      }
+    }
+
+  } // .page-studio
+
+}
 
 // МАЛЕНЬКИЕ ЭКРАНЫ
 @media only screen and (max-width : 655px) {

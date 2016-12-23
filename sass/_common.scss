@@ -262,7 +262,45 @@ li {
   margin: auto;
 }
 
-.btn {
+.modal-form {
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 50%;
+  min-width: 300px;
+  max-width: 550px;
+  //height: 40%;
+  padding: 2rem;
+  margin: auto;
+  font-size: 1rem;
+  color: $clBlackText;
+  background-color: $bgModalForm;
+  border-radius: 5px;
+  
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    padding: .5rem;
+    margin: .5rem 0;
+    border: 1px solid $clBlackText;
+    border-radius: 5px;
+  }
+
+  .close-modal {
+    right: 5px;
+    top: 3px;
+    color: $clBlackText;
+    font-size: 1.8rem;
+    &:hover {
+      color: darken($clBlackText, 20%);
+    }
+  }
+
+}
+
+.btn, button {
   color: $clWhiteText;
   cursor: pointer;
   display: inline-block;
@@ -274,6 +312,7 @@ li {
   padding: .6rem;
   width: 90%;
   max-width: 380px;
+  border: none;
   border-radius: 5px;
   margin: 2rem 0 2rem;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, .8);
@@ -425,7 +464,7 @@ footer {
   }
 
   h2 {
-    color: white;
+    color: white !important;
   }
 
   .adress {
@@ -449,17 +488,17 @@ footer {
   .cofe.sleeve {
     @extend .bg-img;
     background: url($pathCofeSleeve) left bottom repeat-x;
-    bottom: 143px;
+    bottom: 119px;
     left: 110%;
     
-    height: 162px;
+    height: 216px;
     width: 500%;
   }
 
   .cake.arm {
     @extend .bg-img;
     background: url($pathCakeArm) left bottom no-repeat;
-    bottom: -10%;
+    bottom: -5%;
     left: 0;
     
     height: 100%;

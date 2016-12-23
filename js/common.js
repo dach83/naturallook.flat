@@ -1,15 +1,5 @@
 $(function(){
 
-	// DEBUG
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
-	// временно отключаю стандартный обработчик 
-	$(".btn").click (function (){
-		//return false;
-	});
-
-
-
   // Плавный скролл к началу страницы
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
   $(".goto-top").click(function(){
@@ -24,19 +14,20 @@ $(function(){
     }
   });
 
-
-	// Плавный скролл до якоря
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-	$('a[href*=#]').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  
+  // Плавный скролл до якоря
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  $('a[href*=#]').click(function(event) {
+    event.preventDefault();
+    //if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var $target = $(this.hash);
       $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
       if ($target.length) {
       	var targetOffset = $target.offset().top;
         $('html,body').animate({scrollTop: targetOffset}, 500);//скорость прокрутки
-          return false;
+        return false;
       }
-    }
+    //}
   });
 
 

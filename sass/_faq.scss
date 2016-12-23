@@ -2,9 +2,15 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .page-faq {
 
-	header, footer {
+	header, footer, .btn {
 		background-color: $bgFaqFooter;
 	}
+
+
+	h2, h3 {
+		color: $clFaqHeader;
+	}
+
 
 	header {
 
@@ -28,9 +34,9 @@
       @extend .bg-img;
       background: url($pathLampSleeve) left center repeat-x;  
       left: 105%;
-      top: 237px;
+      top: 92px;
       
-      height: 68px;
+      height: 238px;
       width: 500%;
     }
 
@@ -43,19 +49,6 @@
 		.text-wrapper {
 			margin: 0;
 			text-align: left;
-		}
-
-		h2, h3 {
-			color: $clFaqHeader;
-			//padding-top: 1rem;
-			//border-top: 2px dotted rgba($clBlackText, .3);
-		}
-	
-
-		h3 {
-			//color: $bgPagePink;
-			//padding-top: 1rem;
-			//border-top: 2px dotted rgba($clBlackText, .3);
 		}
 
 		p {
