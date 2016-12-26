@@ -160,7 +160,10 @@ $(function(){
 
 
 	// Показ активного слайда
-	ShowActiveSlide ();
+	$(window).load(function(){
+		ShowActiveSlide ();
+	});
+	
 	function ShowActiveSlide (){
 		var slideId = $(".slider li.active").attr("data-slide-id");
 		ShowSlideById (slideId);
