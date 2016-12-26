@@ -31,15 +31,8 @@ $(function(){
   });
 
 
-  // Закрытие модального окна
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  $(".close-modal").click(function(event){
-    event.preventDefault();
 
-    $("body").removeClass("opened-modal");
-    $(".overlay, .modal").fadeOut(0);
 
-  });
 
   // Показ модального окна
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -47,10 +40,64 @@ $(function(){
     event.preventDefault();
 
     var modalId = $(this).attr("href");
-    console.log(modalId);
+    //console.log(modalId);
     $("body").addClass("opened-modal");
-    $(".overlay, " + modalId).fadeIn(0);
-
+    setTimeout(function(){
+      $(".overlay," + modalId).addClass("active");
+    }, 100);
+    setTimeout(function(){
+      $(".overlay," + modalId).addClass("visible");
+    }, 500);
   });
+
+
+  // Закрытие модального окна
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  function CloseModal(){
+    $(".overlay, .modal").removeClass("visible");
+    setTimeout(function(){
+      $(".overlay, .modal").removeClass("active");
+    }, 500);
+    setTimeout(function(){
+      $("body").removeClass("opened-modal");  
+    }, 1000);
+  };
+
+
+  $(".close-modal").click(function(event){
+    event.preventDefault();
+    CloseModal();
+  });
+
+
+  // Валидация формы
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  $(document).on('submit', '.ajax_form', function() {
+    var $this = $(this);
+    var formValidated = true; 
+
+    var name = $this.find('input[name="name"]');
+    if (name.length && name.val().length < 2) {
+      formValidated = false;
+    }
+
+    var phone = $this.find('input[name="phone"]');
+    if (phone.length && phone.val().length < 4) {
+      formValidated = false;
+    }
+
+    afValidated = formValidated;
+  });
+
+
+  // Форма отправлена - закрытие формы
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  $(document).on('af_complete', function(event, response) {
+    if (afValidated){
+      CloseModal();
+    }
+  });
+
+  
 
 });

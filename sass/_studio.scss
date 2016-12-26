@@ -5,11 +5,15 @@
 
   // заголовки главной
   h2 {
-    color: rgba($clStudioHeader, .8);
+    color: $clStudioHeader;
   }
 
   nav, footer, .btn {
     background-color: $bgStudioFooter;
+  }
+
+  .modal-form button {
+    background-color: $bgPageGreen;
   }
 
   // СТРОКА ЗАГОЛОВКА

@@ -122,4 +122,21 @@
     width: 90%;
   }
 
+  // фотографии входа в студию на всю ширину экрана
+  .page-contacts .studio-photo {
+    img:first-of-type {
+      padding-top: 1.5rem;
+    }
+
+    img:last-of-type {
+      padding-bottom: 1.5rem;
+    }
+
+    img {
+      box-sizing: padding-box;
+      padding: .7rem;
+      width: 100%;
+    }
+  }
+
 } // для маленьких устройств

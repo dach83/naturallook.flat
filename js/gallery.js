@@ -290,13 +290,15 @@ $(function(){
 	// щелчек на кнопке закрыть
 	// если история не пустая, то возвращаемся назад
 	// если пустая, то переходим на страницу портфолио
-	$("#js-close-gallery").click(function(){
+	$("#close-gallery").click(function(){
 
-		if (history.length == 1) {
-			window.location.href = "portfolio.html"; 
-		} else {
-			history.back();
-		}
+		//setTimeout (function (){
+			if (history.length == 1) {
+				window.location.href = "portfolio.html"; 
+			} else {
+				history.back();
+			}
+		//}, 50);
 
 	});
 
