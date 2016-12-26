@@ -159,16 +159,15 @@ $(function(){
 	};
 
 
-	// Показ активного слайда
-	$(window).load(function(){
-		ShowActiveSlide ();
-	});
-	
+	// Показ активного слайда	
 	function ShowActiveSlide (){
 		var slideId = $(".slider li.active").attr("data-slide-id");
 		ShowSlideById (slideId);
 	}; 
 
+	$(window).load(function(){
+		ShowActiveSlide ();
+	});
 
 	// Показ предыдущего слайда
 	function ShowPrevSlide (event){
