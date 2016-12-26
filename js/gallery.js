@@ -207,6 +207,9 @@ $(function(){
 		if (event.keyCode == 39) { 
 			ShowNextSlide (event);	
 		}
+		if (event.keyCode == 27) { 
+			//$("#close-gallery").trigger('click');
+		}
 	});
 
 
@@ -287,19 +290,13 @@ $(function(){
 	});
 
 
-	// щелчек на кнопке закрыть
-	// если история не пустая, то возвращаемся назад
-	// если пустая, то переходим на страницу портфолио
+	// Щелчек по кнопке "Закрыть"
 	$("#close-gallery").click(function(){
-
-		//setTimeout (function (){
-			if (history.length == 1) {
-				window.location.href = "portfolio.html"; 
-			} else {
-				history.back();
-			}
-		//}, 50);
-
+		if (history.length == 1) {
+			window.location.href = "portfolio.html"; 
+		} else {
+			history.back();
+		}
 	});
 
 }); // ready

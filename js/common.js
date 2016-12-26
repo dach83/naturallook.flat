@@ -70,6 +70,18 @@ $(function(){
   });
 
 
+  // Кнопки Esc
+  // закрываем модальное окно
+  $(document).keydown(function(event) {
+    if ($("body").hasClass("page-gallery")){
+      return;
+    }
+
+    if (event.keyCode == 27) { 
+      CloseModal();
+    }
+  });
+
   // Валидация формы
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
   $(document).on('submit', '.ajax_form', function() {
