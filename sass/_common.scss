@@ -4,6 +4,7 @@
 @include font-face ("Raleway", "../fonts/Raleway/RalewayLight", 300);
 @include font-face ("Raleway", "../fonts/Raleway/RalewayRegular", 400);
 @include font-face ("Raleway", "../fonts/Raleway/RalewayMedium", 500);
+@include font-face ("Roboto", "../fonts/Roboto/RobotoLight", 300);
 //@include font-face ("Raleway", "../fonts/Raleway/RalewayBold", 500);
 
 
@@ -74,7 +75,7 @@ body {
   overflow-x: hidden;
   &.opened-modal {
     //margin-left: -8px;
-    overflow-y: hidden;
+    //overflow-y: hidden;
   }
 }
 
@@ -109,6 +110,20 @@ a, button {
   outline: none !important;
   color: $clWhiteText;
   transition: color .3s;
+}
+
+input, textarea {
+  box-sizing: border-box;
+  box-shadow: none;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: .5rem;
+  margin: .5rem 0;
+  border: 1px solid $clBlackText;
+  border-radius: 5px;
+  resize: none;
+  font-family: "Roboto", sans-serif; 
 }
 
 button:active, button:focus {
@@ -318,18 +333,6 @@ li {
   background-color: $bgModalForm;
   border-radius: 5px;
   
-  input, textarea {
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 1rem;
-    padding: .5rem;
-    margin: .5rem 0;
-    border: 1px solid $clBlackText;
-    border-radius: 5px;
-    resize: none;
-    font-family: "Raleway", sans-serif; 
-  }
-  
   .btn {
     padding: .8rem;
   }
@@ -348,6 +351,7 @@ li {
 
 
 .btn, button {
+  box-sizing: border-box;
   color: $clWhiteText;
   cursor: pointer;
   display: inline-block;
@@ -379,6 +383,11 @@ li {
   }
 }
 
+
+button.btn {
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
 
 .bg-img {
   display: block;
@@ -450,6 +459,15 @@ li {
   &:hover {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+.subscribe {
+  position: relative;
+  width: 100%;
+
+  input {
+   width: 90%;
   }
 }
 
